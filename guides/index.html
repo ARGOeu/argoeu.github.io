@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>Glossary |  Handle API</title>
+  <title></title>
   <link rel="alternate" type="application/atom+xml" title="API Changes" href="/changes.atom" />
   <link href="/css/reset.css" rel="stylesheet" type="text/css" />
   <link href="/css/960.css" rel="stylesheet" type="text/css" />
@@ -80,67 +80,6 @@
   <div id="wrapper">
     <div class="content">
       
-<h1 id="glossary">Glossary</h1>
-
-
-<h3 id="basic-terms">Basic terms</h3>
-
-<p>Some terms in this document have a very specific meaning:</p>
-
-<ul>
-  <li>
-    <p><strong>PID</strong>: Persistent identifier. It is the Identifier pointing to a resource with no knowledge of the resource. It is the the combination of the prefix/suffix . The prefix is the  API Prefix 11239. As a suffix we use a dynamically created UUID as shown in the following examples.  </p>
-  </li>
-  <li>
-    <p><strong>handle</strong>: The handle is the PID along with a set of values that accompany the PID</p>
-  </li>
-  <li>
-    <p><strong>the API</strong>: the Application Programming Interface laid out in this document</p>
-  </li>
-  <li>
-    <p><strong>server</strong>, <strong>implementation</strong>: an implementation of the API</p>
-  </li>
-  <li>
-    <p><strong>(service) provider</strong>: an organisation or person that operates a server as a service</p>
-  </li>
-  <li>
-    <p><strong>client</strong>: a piece of software that interacts with a server using the API</p>
-  </li>
-  <li>
-    <p><strong>user</strong>: an organisation or person that operates a client</p>
-  </li>
-  <li>
-    <p><strong>UUID</strong>: UUID stands for Universally Unique IDentifier, GUID for Globally Unique IDentifier. A universally unique identifier (UUID) is an identifier standard used in software construction, standardized by the Open Software Foundation (OSF) as part of the Distributed Computing Environment (DCE). The intent of UUIDs is to enable distributed systems to uniquely identify information without significant central coordination.</p>
-  </li>
-</ul>
-
-<h3 id="the-data-model">The data model</h3>
-
-<h4 id="handle-value">Handle value</h4>
-
-<p>A handle value is a collection of the data describing it and the administrative data. Each handle has one or more administrators. Any administrative operation (e.g., add, delete or modify handle values) can only be performed by the handle owner with adequate privilege. The handle owner and any other person with administrative rights on the specific handle, are defined in terms of HS_ADMIN values.</p>
-
-<p>So a handle value is a collection with at least the following:</p>
-
-<ul>
-  <li>idx: a positive number that specifies the unique index of this Handle Value within its Value Set.</li>
-  <li>type: Specifies the data type of member data.</li>
-  <li>parsed_data: The data you entered for the defined type in human readable format. </li>
-  <li>data: a blob. </li>
-  <li>timestamp: a number that records the last time this Handle Value was updated at the server. The field contains elapsed time since 00:00:00 UTC, January 1970 in milliseconds.</li>
-  <li>ttl_type: the TTL type indicates whether the TTL value is absolute or relative.  The absolute TTL value defines the time to live in terms of seconds since 00:00:00 UTC, January 1st 1970.  A relative TTL specifies the time to live in terms of the number of seconds elapsed since the value was obtained by the client from any handle server.</li>
-  <li>ttl: a number that specifies the Time-To- Live of the value record. A positive value defines the time to live in terms of seconds since 00:00:00 UTC, January 1st 1970. A negative value specifies the time to live in terms of the number of seconds elapsed since the value was obtained.</li>
-  <li>refs: a list of references to other Handle Values.</li>
-  <li>privs: The permissions of the handle</li>
-</ul>
-
-<p><strong>Administrative</strong></p>
-
-<ul>
-  <li>idx: the unique id of the administrator</li>
-  <li>type: the admin type</li>
-  <li>parsed_data: the admin data with a set of possible permissions</li>
-</ul>
 
 
  <!--end item[:slug]-->

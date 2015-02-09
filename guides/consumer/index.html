@@ -29,9 +29,18 @@
 
 
 <body class="api">
-  <nav role="navigation" class="navbar navbar-default">
+  <header itemtype="http://schema.org/WPHeader" itemscope="itemscope" role="banner" class="site-header" id="header">
+	<div class="container">
+		<div class="title-area">
+			<div class="site-title" itemtype="http://schema.org/Organization" itemscope="">
+					<img src="/shared/images/argo-logo.png" itemprop="logo">
+			</div>
+		</div>
+	</div>
+</header>
+
+<nav role="navigation" class="navbar navbar-default">
   <div class="container">
-<!--
     <div class="navbar-header">
       <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
         <span class="sr-only">Toggle navigation</span>
@@ -39,14 +48,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Epic Api</a>
     </div>
--->
+
     <nav role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/guides/overview" class="nav-overview"><span class="glyphicon glyphicon-list-alt"></span> Overview</a></li>
-        <li><a href="/guides/api/" class="nav-api"><span class="glyphicon glyphicon-wrench"></span> API</a></li>
-<!--        <li><a href="/guides/glossary/" class="nav-blog"><span class="glyphicon glyphicon-sort-by-alphabet"></span> Glossary</a></li>
+        <li><a href="/guides/overview" class="nav-overview">Overview</a></li>
+        <li><a href="/guides/api/" class="nav-api">API</a></li>
+<!--
+        <li><a href="/guides/glossary/" class="nav-blog">Glossary</a></li>
 -->
       </ul>
     </nav>
@@ -73,7 +82,10 @@
       
 <h1 id="consumer-service">Consumer service</h1>
 
-<p>This document describes the consumer service.</p>
+<p>Data is collected using an ActiveMQ message broker network. The message consumer connects to one of the brokers in the network and subscribes to defined topics.</p>
+
+<p>The consumer has # configuration files that define which messages and what data is logged in the log files.</p>
+
 
 
  <!--end item[:slug]-->
@@ -85,62 +97,38 @@
         <ul>
           <li><h3><a href="/guides/overview">Overview</a></h3></li>
           <li><h3><a href="/guides/installation">Installation</a></h3></li>
+          <li><h3><a href="#">Components</a></h3></li>
           <li><ul>
-                <li><h3><a href="/guides/consumer/">Consumer service</a></h3></li>
                 <li><h3><a href="/guides/sync/">Sync Components</a></h3></li>
-                <li><h3><a href="/guides/hadoop/">Hadoop configuration</a></h3></li>
-                <li><h3><a href="/guides/webui/">WebUI</a></h3></li>
-          </ul></li>
-          <li><h3><a href="/guides/api/">API</a></h3></li>
-          <li><ul>
-                <li><h3><a href="/guides/api/">API functions</a></h3></li>
+                <li><h3><a href="/guides/consumer/">Consumer</a></h3></li>
+                <li><h3><a href="/guides/compute/">Compute Engine</a></h3></li>
+                <li><h3><a href="/guides/api/">API</a></h3></li>
+                <li><h3><a href="/guides/webui/">Web UI</a></h3></li>
           </ul></li>
         </ul> 
       </div>
+      
 <!--
-      <div class="sidebar-module notice padding10">
-          <strong>Service Url:</strong>
-          <span class="txtcenter"> https://epic.grnet.gr/api/v2/handles/ </span>
-      </div>
+<div class="sidebar-module notice padding10">
+  <strong>API Url:</strong>
+  <span>  The API URL (https://epic.grnet.gr/api/v2/handles/) is used as an example in these page. Each EPIC provider has each own EPIC API endpoint(s)</span>
+</div>
 -->
-<!--
       <div class="sidebar-module padding10">
           <strong>Contact Us:</strong>
-           <a href="https://docs.google.com/forms/d/1IQL8dtwUW_MrV9ApZJmnjzZRaAAp18JtGTa2wMfcxiM/viewform" target='blank'>Contact Us</a>
-      </div>
--->
+           <a href="mailto:contact@argodoc.eu" target='blank'>Contact Us</a>
+      </div><!--sidebar-module-->
 	</div>
   </div><!-- #wrapper -->
 
-  	<div id="footer" >
-    <div class="lower_footer">
-      <ul class="footer-cell">
-	
-      </ul>
-
-      <span class="footer-cell">
-        <a href="http://www.grnet.gr"><img src="/shared/images/grnet-logo.jpg" alt='GRNET'/></a>
-      </span>
-
-      <span class="footer-cell">
-        <a href="http://www.grnet.gr"><img src="/shared/images/grnet-logo.jpg" alt='GRNET-2'/></a>
-      </span>
-
-      <span class="footer-cell">
-        <a href="http://www.grnet.gr"><img src="/shared/images/grnet-logo.jpg" alt='GRNET-3'/></a>
-      </span>
-
-      <span class="footer-cell">
-        <a href="http://www.grnet.gr"><img src="/shared/images/grnet-logo.jpg" alt='GRNET-4'/></a>
-      </span>
-
-      <ul class="footer-cell">
-        <li><a href='/other/terms'>ARGO License</a></li>	
-      </ul>
-
-    </div>
-
-  </div><!-- /#footer -->
+  <footer itemtype="http://schema.org/WPFooter" itemscope="itemscope" role="contentinfo" class="site-footer" id="footer">
+	<div class="wrap">
+		<p>&nbsp;</p>
+		<div class="footer-content footer-insert">
+		<p class="copyright">Copyright &copy; 2014 <a rel="home" href="mailto:contact@argodoc.eu" class="site-link" target='_blank'>ARGO Consurtium</a>.</p>
+		</div>
+	</div>
+</footer>
 
 </body>
 </html>
