@@ -87,28 +87,37 @@
 <p>Web UI module for the ARGO Framework :</p>
 
 <ul>
-  <li>based on Lavoisier Framework - http://software.in2p3.fr/lavoisier</li>
+  <li>based on Lavoisier Framework - <code>http://software.in2p3.fr/lavoisier</code>
+</li>
   <li>prerequisites : a server certificate and java</li>
 </ul>
 
-<p>Installation - the $HOME_LAVOISIER is the directory where do you install the service
-* cd $HOME_LAVOISIER
-* wget https://github.com/ARGOeu/argo-ui/archive/master.zip
-* unzip master.zip
-* mkdir certificate
-* put your certificate in p12 format in this directory
-* cd $HOME_LAVOISIER/argo-ui-master/etc
-* vi lavoisier-hidden.properties
-* complete certificate.password and certificate.password</p>
+<p>Installation - the <code>$HOME_LAVOISIER</code> is the directory where do you install the service</p>
+
+<pre><code># cd $HOME_LAVOISIER
+# wget https://github.com/ARGOeu/argo-ui/archive/master.zip
+# unzip master.zip
+# mkdir certificate
+</code></pre>
+
+<p>Put your certificate in p12 format in this directory</p>
+
+<pre><code># cd $HOME_LAVOISIER/argo-ui-master/etc
+# vi lavoisier-hidden.properties
+</code></pre>
+
+<p>Finally, complete certificate.password and certificate.password</p>
 
 <p>Start the service </p>
 
 <ul>
-  <li>./bin/lavoisier.sh console</li>
-  <li>check the logs and access to the interface : http://yourmachine:8080/lavoisier</li>
-  <li>if everything goes well </li>
-  <li>./bin/lavoisier.sh restart</li>
+  <li><code>./bin/lavoisier.sh console</code></li>
+  <li>check the logs and access to the interface : <code>http://yourmachine:8080/lavoisier</code>
+</li>
+  <li>if everything goes well <code>./bin/lavoisier.sh restart</code>
+</li>
 </ul>
+
 
 
  <!--end item[:slug]-->
