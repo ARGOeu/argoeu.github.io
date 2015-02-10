@@ -106,7 +106,14 @@
 # vi lavoisier-hidden.properties
 </code></pre>
 
-<p>Finally, complete certificate.password and certificate.password</p>
+<p>Finally, complete certificate.password and certificate.password
+Eventually modify the cache.baseDirectory property - if you want to put it elsewhere</p>
+
+<pre><code># cd $HOME_LAVOISIER/argo-ui-master/etc
+# vi lavoisier-service.properties
+</code></pre>
+
+<p>Complete lavoisier.ssl.trustStore (/etc/grid-security/certificates) , lavoisier.ssl.keyStore (path to p12 certificate) , and lavoisier.ssl.keyStorePassword</p>
 
 <p>Start the service </p>
 
@@ -118,6 +125,18 @@
 </li>
 </ul>
 
+<p>Useful commands and hints</p>
+
+<p>To change the PI base url : </p>
+
+<pre><code># vi $HOME_LAVOISIER/etc/ARGO_UI/lavoisier-config.properties
+</code></pre>
+
+<p>To stop lavoisier : </p>
+
+<pre><code># cd $HOME_LAVOISIER
+# ./bin/lavoisier.sh stop
+</code></pre>
 
 
  <!--end item[:slug]-->
