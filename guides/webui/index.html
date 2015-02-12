@@ -80,7 +80,7 @@
   <div id="wrapper">
     <div class="content">
       
-<h1 id="web-ui">Web UI</h1>
+<h2 id="web-ui-description">Web UI Description</h2>
 
 <p>This document describes the Web UI installation and configuration process. </p>
 
@@ -92,7 +92,9 @@
   <li>prerequisites : a server certificate and java</li>
 </ul>
 
-<p>Installation - the <code>$HOME_LAVOISIER</code> is the directory where do you install the service</p>
+<h2 id="installation">Installation</h2>
+
+<p><code>$HOME_LAVOISIER</code> is the directory where do you install the service</p>
 
 <pre><code># cd $HOME_LAVOISIER
 # wget https://github.com/ARGOeu/argo-ui/archive/master.zip
@@ -103,17 +105,13 @@
 <p>Put your certificate in p12 format in this directory</p>
 
 <pre><code># cd $HOME_LAVOISIER/argo-ui-master/etc
-# vi lavoisier-hidden.properties
+# vi lavoisier-hidden.properties Finally, complete certificate.password and certificate.password Eventually modify the cache.baseDirectory property - if you want to put it elsewhere
+
+
+
+# cd $HOME_LAVOISIER/argo-ui-master/etc
+# vi lavoisier-service.properties Complete lavoisier.ssl.trustStore (/etc/grid-security/certificates) , lavoisier.ssl.keyStore (path to p12 certificate) , and lavoisier.ssl.keyStorePassword
 </code></pre>
-
-<p>Finally, complete certificate.password and certificate.password
-Eventually modify the cache.baseDirectory property - if you want to put it elsewhere</p>
-
-<pre><code># cd $HOME_LAVOISIER/argo-ui-master/etc
-# vi lavoisier-service.properties
-</code></pre>
-
-<p>Complete lavoisier.ssl.trustStore (/etc/grid-security/certificates) , lavoisier.ssl.keyStore (path to p12 certificate) , and lavoisier.ssl.keyStorePassword</p>
 
 <p>Start the service </p>
 
@@ -125,7 +123,7 @@ Eventually modify the cache.baseDirectory property - if you want to put it elsew
 </li>
 </ul>
 
-<p>Useful commands and hints</p>
+<p>## Useful commands and hints</p>
 
 <p>To change the PI base url : </p>
 
@@ -136,6 +134,11 @@ Eventually modify the cache.baseDirectory property - if you want to put it elsew
 
 <pre><code># cd $HOME_LAVOISIER
 # ./bin/lavoisier.sh stop
+</code></pre>
+
+<p>To modify the list of administrators </p>
+
+<pre><code># vi $HOME_LAVOISIER/etc/ARGO_UI/resources/xml/administrators.xml
 </code></pre>
 
 
@@ -151,6 +154,7 @@ Eventually modify the cache.baseDirectory property - if you want to put it elsew
           <li><h3><a href="#">Components</a></h3></li>
           <li><ul>
                 <li><h3><a href="/guides/sync/">Sync Components</a></h3></li>
+                <li><h3><a href="/guides/poem/">Poem Service</a></h3></li>
                 <li><h3><a href="/guides/consumer/">Consumer</a></h3></li>
                 <li><h3><a href="/guides/compute/">Compute Engine</a></h3></li>
                 <li><h3><a href="/guides/api/">API</a></h3></li>
