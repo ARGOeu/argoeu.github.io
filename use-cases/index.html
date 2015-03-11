@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>Consumer | ARGO</title>
+  <title>ARGO Use Cases</title>
   <link rel="alternate" type="application/atom+xml" title="API Changes" href="/changes.atom" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +26,7 @@
   <![endif]-->
 </head>
 
-<body class="api">
+<body class="usecases">
   <!-- Fixed navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container">
@@ -66,56 +66,63 @@
 	</div><!--container-->
 </nav>
 
-  <div class='container-fluid' >
-    <div class='row'>
-        <div class="col-md-2 sidebar">
-                   <div class="list-group">	
-            <a class="list-group-item disabled blue" href="#">Documentation</a>
-          
-            <a class="list-group-item" href="/overview/">Overview</a>
-          
-          
-            <a class="list-group-item" href="/guides/installation/">Installation</a>
-          
-            <a class="list-group-item disabled blue" href="#">Components</a>
-          
-            <a class="list-group-item" href="/guides/sync/"><i class="fa fa-refresh"></i> Sync components</a>
-          
-          
-            <a class="list-group-item" href="/guides/poem/"><i class="fa fa-check-square-o"></i> Poem service</a>
-          
-          	
-            <a class="list-group-item active" href="/guides/consumer/"><i class="fa fa-send-o"></i> Consumer</a>
-          
-            
-            <a class="list-group-item " href="/guides/compute/"><i class="fa fa-cog"></i> Compute Engine</a>
-          
-          
-            <a class="list-group-item" href="/guides/api/" >
-          
-          <i class="fa fa-cogs"></i> API</a>
-          
-            <a class="list-group-item" href="/guides/webui/"><i class="fa fa-connectdevelop"></i> Web UI</a>
-          
-          </div> <!--list group-->
 
+<!-- features -->
+      <div class="marketing" style='background-color:#f5f5f5;padding-top:60px;'>
+        <div class='container'>
+          <div class='row'>
+            <div class='fancy-header'>
+              <h1>Use Cases</h1>
+              <h2 class="highlight">Distributed model with central reporting</h2>
+            </div>
+          </div>
+        </div><!--container-->
+        <div class="container marketing">
+        <!-- START THE FEATURETTES -->
+        <div class="row featurette">
+          <div class="col-md-5">
+            <img class="featurette-image img-responsive rounded" src="/shared/images/use-cases/1.png" alt="Distributed model with central reporting">
+          </div>
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Distributed model with central reporting </h2>
+            <p class="lead"> Monitoring engines are deployed in various locations across the infrastructure. Each monitoring engine is be configured to monitor a subset of the infrastructure and publish the monitoring results to the reporting engine. The reporting is deployed in a central location and it aggregates the monitoring results produced by each monitoring engine. </p>
+          </div>
+        </div> <!-- row featurette -->
+
+        <div class='row'>
+          <div class="heading">
+            <h1>Centralised Model</h1>
+          </div><!-- div.heading -->
         </div>
-        <div class="col-md-8 main">
-          	
-            <h1 class="highlight">
-            
-              <i class='fa fa-send-o'></i> 
-            
-            Consumer Service</h1>
-          
-          <p class="lead"> Data is collected using an ActiveMQ message broker network. The message consumer connects to one of the brokers in the network and subscribes to defined topics.  The consumer has</p>
-          
 
-        </div><!--col-md-8-->
-        <div class="col-md-2">&nbsp;</div>
-      </div><!--row-->
-    </div><!--container fluid-->
-    <!-- from -->
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Centralised Model </h2>
+            <p class="lead">This is the simplest model of all. Both the monitoring engine and the reporting engine are deployed at the same location. The monitoring engine, monitors the whole infrastructure and pushes the result to the reporting engine. This scenario is commonly found in deployments within one administrative domain, in which there is no need for distributing the deployments across the infrastructure. Of course as the infrastructure might scale, it is possible to transition to a distributed model with a minimal effort. </p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-responsive rounded" src="/shared/images/use-cases/2.png" alt="Centralised Model">
+          </div>
+        </div> <!-- row featurette -->
+
+        <div class='row'>
+          <div class="heading">
+            <h1>Distributed model with local and centralised reporting</h1>
+          </div><!-- div.heading -->
+        </div>
+        <div class="row featurette">
+          <div class="col-md-4">
+            <img class="featurette-image img-responsive rounded" src="/shared/images/use-cases/3.png" alt="Distributed model with local and centralised reporting">
+          </div>
+          <div class="col-md-8">
+            <h2 class="featurette-heading">Distributed model with local and centralised reporting </h2>
+            <p class="lead">Monitoring engines are distributed across the infrastructure. Reporting engines are deployed locally for local reporting and centrally providing a holistic view. </p>
+          </div> 
+        </div> <!-- row featurette -->
+        <hr class="featurette-divider">
+      </div>
+    </div><!--marketing-->
+  <!-- from -->
 <div class="jumbotron">
     <div class="container" style='padding-left:40px;'>
       <a href='https://www.grnet.gr/en' target='blank'><img src='/shared/images/grnet_transparent.png' style='padding-left:40px;' alt='GRNET S.A - Greek Research & Technology Network' title='GRNET S.A - Greek Research & Technology Network'/></a>
@@ -127,7 +134,7 @@
 <!-- from-->
 
 
-  
+
 <!--footer -->
     <footer  id="footer" class="footer">
 	<div class='footer_top'>       
