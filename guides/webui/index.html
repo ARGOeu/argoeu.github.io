@@ -25,7 +25,6 @@
   <link rel="stylesheet" href="/shared/css/font-beba.css">
 
   <link href="/shared/css/custom.css" rel="stylesheet">
-  <script src="/shared/js/ie-emulation-modes-warning.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -34,7 +33,7 @@
   <![endif]-->
 </head>
 
-<body class="api">
+<body class="documentation">
   <!-- Fixed navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container">
@@ -45,28 +44,28 @@
 		    <span class="icon-bar"></span>
 		    <span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="#"><img src='/shared/images/argo-logo.png' alt='Argo'  /></a>
+		  <a class="navbar-brand" href="/index.html"><img src='/shared/images/argo-logo.png' alt='ARGO'  /></a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 		  <ul class="nav navbar-nav navbar-right">
-		    <li class="active"><a href="/index.html#">Home</a></li>
+		    <li class="active"><a href="/index.html">Home</a></li>
 		    <li><a href="/index.html#what">About</a></li>
 		    <li><a href="/index.html#features">Features</a></li>
 		    <li><a href="/use-cases/">Use cases</a></li>
 		    <li class="dropdown">
 		      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
 		      <ul class="dropdown-menu" role="menu">
-			<li><a href="/overview/"><i class="fa fa-file-text-o"></i>  Overview</a></li>
-			<li><a href="/guides/installation/"><i class="fa fa-file-text-o"></i>  Installation</a></li>
-			<li><a href="/guides/sync/"><i class="fa fa-refresh"></i > Sync components</a></li>
-			<li><a href="/guides/poem/"><i class="fa fa-check-square-o"></i>  Poem service</a></li>
-			<li><a href="/guides/consumer/"><i class="fa fa-send-o"></i>  Consumer</a></li>
-			<li><a href="/guides/compute/"><i class="fa fa-cog"></i>  Compute Engine</a></li>
-			<li><a href="/guides/webui/"><i class="fa fa-connectdevelop"></i>  Web UI</a></li>
+			<li><a href="/overview/"><em class="fa fa-file-text-o"></em>  Overview</a></li>
+			<li><a href="/guides/installation/"><em class="fa fa-file-text-o"></em>  Installation</a></li>
+			<li><a href="/guides/sync/"><em class="fa fa-refresh"></em> EGI Connectors</a></li>
+			<li><a href="/guides/poem/"><em class="fa fa-check-square-o"></em>  Poem service</a></li>
+			<li><a href="/guides/consumer/"><em class="fa fa-send-o"></em>  Consumer</a></li>
+			<li><a href="/guides/compute/"><em class="fa fa-cog"></em>  Compute Engine</a></li>
+			<li><a href="/guides/webui/"><em class="fa fa-connectdevelop"></em>  Web UI</a></li>
 			<li class="divider"></li>
 			<li class="dropdown-header">Developers</li>
-			<li><a href="/guides/api/"><i class="fa fa-cogs"></i>  API </a></li>
-			<li><a href="#"><i class="fa fa-github-alt"></i>  Github</a></li>
+			<li><a href="/guides/api/"><em class="fa fa-cogs"></em>  API </a></li>
+			<li><a href="#"><em class="fa fa-github-alt"></em>  Github</a></li>
 		      </ul>
 		    </li>
 		  </ul>
@@ -77,105 +76,159 @@
   <div class='container-fluid' >
     <div class='row'>
         <div class="col-md-2 sidebar">
-                   <div class="list-group">	
-            <a class="list-group-item disabled blue" href="#">Documentation</a>
+                   <div class="list-group" >	
+            <a class="list-group-item disabled blue" href="/overview/">Documentation</a>
           
             <a class="list-group-item" href="/overview/">Overview</a>
           
+            <a class="list-group-item disabled blue" href="/guides/installation/">Installation</a>
           
-            <a class="list-group-item" href="/guides/installation/">Installation</a>
-          
-            <a class="list-group-item disabled blue" href="#">Components</a>
-          
-            <a class="list-group-item" href="/guides/sync/"><i class="fa fa-refresh"></i> Sync components</a>
+            <a class="list-group-item" href="/guides/installation/"><em class="fa fa-terminal"></em> Standalone</a>
           
           
-            <a class="list-group-item" href="/guides/poem/"><i class="fa fa-check-square-o"></i> Poem service</a>
+            <a class="list-group-item" href="/guides/installation_cluster/"><em class="fa fa-sitemap"></em> Cluster Mode</a>
+          
+            <a class="list-group-item disabled blue" href="/guides/sync/">Components</a>
+          
+            <a class="list-group-item" href="/guides/sync/"><em class="fa fa-refresh"></em> EGI Connectors</a>
           
           
-            <a class="list-group-item" href="/guides/consumer/"><i class="fa fa-send-o"></i> Consumer</a>
+            <a class="list-group-item" href="/guides/poem/"><em class="fa fa-check-square-o"></em> Poem service</a>
+          
+          
+            <a class="list-group-item" href="/guides/consumer/"><em class="fa fa-send-o"></em> Consumer</a>
           
             
-            <a class="list-group-item " href="/guides/compute/"><i class="fa fa-cog"></i> Compute Engine</a>
+            <a class="list-group-item " href="/guides/compute/"><em class="fa fa-cog"></em> Compute Engine</a>
           
+  	  <div id='caret-data1'>
+
+            
+              <a class="list-group-item-level2"  href="/guides/compute/compute-input/">
+            
+            <em class="fa fa-cog"></em> Compute Engine Input </a>
+ 	    
+              <a class="list-group-item-level2"  href="/guides/compute/compute-job-configuration/">
+            
+            <em class="fa fa-cog"></em> Compute engine job configurations </a>
+
+ 
+ 	    
+              <a class="list-group-item-level2"  href="/guides/compute/cli-interaction/">
+            
+            <em class="fa fa-cog"></em> Compute Engine CLI </a>
+
+
+	  </div>
           
-            <a class="list-group-item" href="/guides/api/" >
+            <a class="list-group-item" href="/guides/api/" id='caretclick' data-caret='open'> 
           
-          <i class="fa fa-cogs"></i> API</a>
-          	
-            <a class="list-group-item active" href="/guides/webui/"><i class="fa fa-connectdevelop"></i> Web UI</a>
+          <em class="fa fa-cogs"></em> API <span class="caret" ></span></a>
+
+          <div id='caret-data'>
+            
+              <a class="list-group-item-level2"  href="/guides/api/status-results/">
+            
+            <em class="fa fa-cogs"></em> API - Status results</a>
+
+            
+              <a class="list-group-item-level2"  href="/guides/api/avail-reliab/">
+            
+            <em class="fa fa-cogs"></em> API - Availabilities & Reliabilities</a>
+
+            
+              <a class="list-group-item-level2"  href="/guides/api/metric-result/">
+            
+            <em class="fa fa-cogs"></em> Metric Result</a>
+
+            
+              <a class="list-group-item-level2"  href="/guides/api/recalculationrequests/">
+            
+            <em class="fa fa-cogs"></em> Recalculation Requests</a>
+
+            
+              <a class="list-group-item-level2"  href="/guides/api/availabilityprofs/">
+            
+            <em class="fa fa-cogs"></em> API - Availability Profiles</a>
+
+            
+              <a class="list-group-item-level2"  href="/guides/api/poemprofiles/">
+            
+            <em class="fa fa-cogs"></em> API - POEM Profiles</a>
+
+        </div>
+          
+            <a class="list-group-item" href="/guides/webui/"><em class="fa fa-connectdevelop"></em> Web UI</a>
           
           </div> <!--list group-->
+          <p>&nbsp;</p>
+
+          
+
+
 
         </div>
         <div class="col-md-8 main">
-          	
-            <h1 class="highlight">
-            
-              <i class='fa fa-connectdevelop'></i> 
-            
-            Web UI</h1>
           
-          <p class="lead"> This document describes the Web UI installation and configuration process.</p>
+          <p class="lead"> </p>
           
-<h2 id="web-ui-description">Web UI Description</h2>
-
-<p>Web UI module for the ARGO Framework :</p>
+<h2 id="description">Description</h2>
+<p># Web UI module for the ARGO Framework</p>
 
 <ul>
-  <li>based on Lavoisier Framework - <code>http://software.in2p3.fr/lavoisier</code>
-</li>
+  <li>based on Lavoisier Framework - http://software.in2p3.fr/lavoisier</li>
   <li>prerequisites : a server certificate and java</li>
 </ul>
 
 <h2 id="installation">Installation</h2>
+<p>### the $HOME_LAVOISIER is the directory where do you install the service
+* cd $HOME_LAVOISIER
+* wget https://github.com/ARGOeu/argo-egi-web/archive/master.zip
+* unzip master.zip
+* mkdir certificate
+* put your certificate in p12 format in this directory</p>
 
-<p><code>$HOME_LAVOISIER</code> is the directory where do you install the service</p>
+<h2 id="configuration">Configuration</h2>
+<p>### edit lavoisier-hidden.properties
+* cd $HOME_LAVOISIER/argo-egi-web-master/etc
+* vi lavoisier-hidden.properties
+* complete certificate.password and certificate.password
+*</p>
 
-<pre><code># cd $HOME_LAVOISIER
-# wget https://github.com/ARGOeu/argo-ui/archive/master.zip
-# unzip master.zip
-# mkdir certificate
-</code></pre>
-
-<p>Put your certificate in p12 format in this directory</p>
-
-<pre><code># cd $HOME_LAVOISIER/argo-ui-master/etc
-# vi lavoisier-hidden.properties Finally, complete certificate.password and certificate.password Eventually modify the cache.baseDirectory property - if you want to put it elsewhere
-
-
-
-# cd $HOME_LAVOISIER/argo-ui-master/etc
-# vi lavoisier-service.properties Complete lavoisier.ssl.trustStore (/etc/grid-security/certificates) , lavoisier.ssl.keyStore (path to p12 certificate) , and lavoisier.ssl.keyStorePassword
-</code></pre>
-
-<p>Start the service </p>
-
+<h3 id="edit-lavoisier-serviceproperties">edit lavoisier-service.properties</h3>
 <ul>
-  <li><code>./bin/lavoisier.sh console</code></li>
-  <li>check the logs and access to the interface : <code>http://yourmachine:8080/lavoisier</code>
-</li>
-  <li>if everything goes well <code>./bin/lavoisier.sh restart</code>
-</li>
+  <li>cd $HOME_LAVOISIER/argo-egi-web-master/etc</li>
+  <li>vi lavoisier-service.properties</li>
+  <li>lavoisier.ssl.trustStore=path_to_your_ca  (/etc/grid-security/certificates)</li>
+  <li>lavoisier.ssl.keyStore= path to the lavoisier certificate</li>
+  <li>lavoisier.ssl.keyStorePassword= password of this certificate</li>
 </ul>
 
-<p>## Useful commands and hints</p>
+<h2 id="examples">Examples</h2>
 
-<p>To change the PI base url : </p>
+<h3 id="start-the-service">Start the service</h3>
 
-<pre><code># vi $HOME_LAVOISIER/etc/ARGO_UI/lavoisier-config.properties
-</code></pre>
+<ul>
+  <li>./bin/lavoisier.sh console</li>
+  <li>check the logs and access to the interface : http://yourmachine:8080/lavoisier</li>
+  <li>if everything goes well</li>
+  <li>./bin/lavoisier.sh restart</li>
+</ul>
 
-<p>To stop lavoisier : </p>
+<h3 id="useful-commands-and-hints">Useful commands and hints</h3>
 
-<pre><code># cd $HOME_LAVOISIER
-# ./bin/lavoisier.sh stop
-</code></pre>
+<ul>
+  <li>To change the PI base url : vi $HOME_LAVOISIER/etc/ARGO_UI/lavoisier-config.properties</li>
+  <li>to stop lavoisier : 
+cd $HOME_LAVOISIER
+./bin/lavoisier.sh stop</li>
+</ul>
 
-<p>To modify the list of administrators </p>
+<h2 id="links-and-further-reading">Links and further reading</h2>
 
-<pre><code># vi $HOME_LAVOISIER/etc/ARGO_UI/resources/xml/administrators.xml
-</code></pre>
+<ul>
+  <li>http://software.in2p3.fr/lavoisier/</li>
+</ul>
 
         </div><!--col-md-8-->
         <div class="col-md-2">&nbsp;</div>
@@ -232,6 +285,9 @@
 	</div>
      </div>	
     </footer>
+    <a href="#" class="back-to-top" style="display: inline;">
+      <i class="fa fa-arrow-circle-up"></i>
+    </a>
 <!--/footer -->
 
 
@@ -254,7 +310,22 @@
         play: 10000
       });
 
-    });
+        var offset = 250;
+        var duration = 300;
+        jQuery(window).scroll(function() {
+          if (jQuery(this).scrollTop() > offset) {
+            jQuery('.back-to-top').fadeIn(duration);
+          } else {
+            jQuery('.back-to-top').fadeOut(duration);
+          }
+        });
+        jQuery('.back-to-top').click(function(event) {
+          event.preventDefault();
+          jQuery('html, body').animate({scrollTop: 0}, duration);
+          return false;
+        })
+      });
+
   </script>
 
 </body>
