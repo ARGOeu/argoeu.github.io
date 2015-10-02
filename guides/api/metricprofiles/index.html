@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>ARGO Availability and Reliability Monitoring - ARGO Documentation</title>
+  <title>ARGO Availability and Reliability Monitoring - API documentation | ARGO</title>
   <link rel="alternate" type="application/atom+xml" title="API Changes" href="/changes.atom" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,43 +33,7 @@
   <![endif]-->
 </head>
 
-<body class="api">
-    <div id="slides" style='padding-top:-50px;margin-top:-50px;'>
-      <ul class="slides-container">
-        <li>
-        <img src="/shared/images/slider/14781947981_c6a8103fca_k1.jpg" alt="Track Key Performance Indicators">
-          <div class="scontainer-right">
-            <h1 class='h1slider-right'>Track Key Performance Indicators</h1>
-            <p class='pslider-right'>ARGO can monitor a wide range of platforms and provide operational and business insight for a wide range of built-in and user defined key performance indicators.</p>
-          </div>
-        </li>
-        <li>
-          <img src="/shared/images/slider/tablet-602968_1920.jpg" alt="Notification and detailed status reports">
-          <img src="/shared/images/slider/tablet-602968_1920.jpg" alt="">
-          <div class="scontainer">
-            <h1 class='h1slider'>Notification and detailed status reports</h1>
-            <p class='pslider'>Using ARGO operations teams can track the performance and status of each component in the infrastructure, receive notifications and detailed status reports.</p>
-          </div>
-        </li>
-        <li>
-          <img src="/shared/images/slider/14185447737_ef38603941_k.jpg" alt="Monitor SLAs">
-          <div class="scontainer">
-            <h1 class='h1slider'>Monitor SLAs</h1>
-            <p class='pslider'>Management teams can monitor the availability and reliability of the services from a high level view down to individual system metrics and monitor the conformance of multiple SLAs</p>
-          </div>
-        </li>     
-      </ul>
-      <nav class="slides-navigation">
-        <a href="#" class="next">
-        <i class="icon-chevron-right"></i>
-        </a>
-        <a href="#" class="prev">
-        <i class="icon-chevron-left"></i>
-        </a>
-      </nav>
-    </div> <!--slides -->
-
-    <!-- slider end -->
+<body class="documentation">
   <!-- Fixed navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container">
@@ -109,38 +73,168 @@
 	</div><!--container-->
 </nav>
 
+  <div class='container-fluid' >
+    <div class='row'>
+        <div class="col-md-2 sidebar">
+                   <div class="list-group" >	
+            <a class="list-group-item disabled blue" href="/overview/">Documentation</a>
+          
+            <a class="list-group-item" href="/overview/">Overview</a>
+          
+            <a class="list-group-item disabled blue" href="/guides/installation/">Installation</a>
+          
+            <a class="list-group-item" href="/guides/installation/"><em class="fa fa-terminal"></em> Standalone</a>
+          
+          
+            <a class="list-group-item" href="/guides/installation_cluster/"><em class="fa fa-sitemap"></em> Cluster Mode</a>
+          
+            <a class="list-group-item disabled blue" href="/guides/sync/">Components</a>
+          
+            <a class="list-group-item" href="/guides/sync/"><em class="fa fa-refresh"></em> EGI Connectors</a>
+          
+          
+            <a class="list-group-item" href="/guides/poem/"><em class="fa fa-check-square-o"></em> Poem service</a>
+          
+          
+            <a class="list-group-item" href="/guides/consumer/"><em class="fa fa-send-o"></em> Consumer</a>
+          
+            
+            <a class="list-group-item " href="/guides/compute/"><em class="fa fa-cog"></em> Compute Engine</a>
+          
+  	  <div id='caret-data1'>
 
-    <a id='what'></a>
-    <div class="marketing" style='background-color:#f5f5f5;padding-top:60px;'>
-      <div class='container'>
-        <div class='row'>
-          <div class='fancy-header'>
-            <h1>Learn About</h1>
-            <h2 class="highlight">Availability and reliability monitoring for e-Infrastructures</h2>
-          </div><!--fancy-header-->
-        </div><!-- row -->
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-          <div class="col-lg-4">
-              <a href='/use-cases/'><em class="fa fa-camera-retro fa-6 fa-blue"></em> </a>
-              <h2><a href='/use-cases/'> Use Cases</a></h2>
-              <p>  See how you can benefit from ARGO.</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-              <a href='/overview/'><em class="fa fa-file-text-o fa-6 fa-blue"></em> </a>
-              <h2><a href='/overview/'> Documentation</a></h2>
-              <p>  Learn how to install, configure and run ARGO.</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-              <a href='https://github.com/ARGOeu'><em class="fa fa-code fa-6 fa-blue"></em> </a>
-              <h2><a href='https://github.com/ARGOeu'> Code</a></h2>
-              <p>  Get the ARGO source code.</p>
-          </div><!-- /.col-lg-4 --> 
-         </div><!-- /.row -->
-        <div class="row">&nbsp;<p>&nbsp;</p><p>&nbsp;</p></div>
-      </div><!--container -->
-    </div><!-- marketing -->
-  <!-- from -->
+            
+              <a class="list-group-item-level2"  href="/guides/compute/compute-input/">
+            
+            <em class="fa fa-cog"></em> Compute Engine Input </a>
+ 	    
+              <a class="list-group-item-level2"  href="/guides/compute/compute-job-configuration/">
+            
+            <em class="fa fa-cog"></em> Compute engine job configurations </a>
+
+ 
+ 	    
+              <a class="list-group-item-level2"  href="/guides/compute/cli-interaction/">
+            
+            <em class="fa fa-cog"></em> Compute Engine CLI </a>
+
+
+	  </div>
+          
+            <a class="list-group-item active" href="/guides/api/" id='caretclick' data-caret='open'>
+          
+          <em class="fa fa-cogs"></em> API <span class="caret" ></span></a>
+
+          <div id='caret-data'>
+            
+              <a class="list-group-item-level2"  href="/guides/api/status-results/">
+            
+            <em class="fa fa-cogs"></em> API - Status results</a>
+
+            
+              <a class="list-group-item-level2"  href="/guides/api/avail-reliab/">
+            
+            <em class="fa fa-cogs"></em> API - Availabilities & Reliabilities</a>
+
+            
+              <a class="list-group-item-level2"  href="/guides/api/metric-result/">
+            
+            <em class="fa fa-cogs"></em> Metric Result</a>
+
+            
+              <a class="list-group-item-level2"  href="/guides/api/recalculationrequests/">
+            
+            <em class="fa fa-cogs"></em> Recalculation Requests</a>
+
+            
+              <a class="list-group-item-level2"  href="/guides/api/availabilityprofs/">
+            
+            <em class="fa fa-cogs"></em> API - Availability Profiles</a>
+
+            
+              <a class="list-group-item-level2 active"  href="/guides/api/poemprofiles/">
+            
+            <em class="fa fa-cogs"></em> API - POEM Profiles</a>
+
+        </div>
+          
+            <a class="list-group-item" href="/guides/webui/"><em class="fa fa-connectdevelop"></em> Web UI</a>
+          
+          </div> <!--list group-->
+          <p>&nbsp;</p>
+
+          
+
+
+
+        </div>
+        <div class="col-md-8 main">
+          	
+            <h1 class="highlight">
+            
+              <i class='fa fa-cogs'></i> 
+            
+            API - POEM Profiles</h1>
+          
+          <p class="lead"> API Calls for retrieving available POEM profiles</p>
+          <h2 id="api-data">API Data</h2>
+
+<table>
+<tbody>
+<tr>
+<td>Base URL</td>
+<td><code>https://host:port/api/v2/</code></td>
+</tr>
+<tr>
+<td><strong>Default Port</strong></td>
+<td><code>443</code></td>
+</tr>
+<tr>
+<td><strong>Central instance of the ARGO production service</strong></td>
+<td><code>https://snf-629551.vm.okeanos.grnet.gr/api/v2/</code></td>
+</tr>
+</tbody>
+</table>
+
+
+          
+<p><a id="1"></a></p>
+
+<h2 id="get-list-metric-profiles">GET: List Metric Profiles</h2>
+
+<p>This method can be used to retrieve a list of current metric (poem) profiles.</p>
+
+<h3 id="input">Input</h3>
+
+<pre><code>/poems
+</code></pre>
+
+<h4 id="request-headers">Request headers</h4>
+
+<pre><code>x-api-key: "tenant_key_value"
+</code></pre>
+
+<h3 id="response">Response</h3>
+
+<p>Headers: <code>Status: 200 OK</code></p>
+
+<h4 id="response-body">Response body</h4>
+
+<pre><code>&lt;root&gt;
+  &lt;Poem profile="ch.cern.sam.CLOUD-MON"/&gt;
+  &lt;Poem profile="ch.cern.sam.GLEXEC"/&gt;
+  &lt;Poem profile="ch.cern.sam.OPS_MONITOR"/&gt;
+  .
+  .
+&lt;/root&gt;
+</code></pre>
+
+
+        </div><!--col-md-8-->
+        <div class="col-md-2">&nbsp;</div>
+      </div><!--row-->
+    </div><!--container fluid-->
+    <!-- from -->
 <div class="jumbotron">
     <div class="container" style='padding-left:40px;'>
       <a href='https://www.grnet.gr/en' target='blank'><img src='/shared/images/grnet_transparent.png' style='padding-left:40px;' alt='GRNET S.A - Greek Research & Technology Network' title='GRNET S.A - Greek Research & Technology Network'/></a>
@@ -152,66 +246,7 @@
 <!-- from-->
 
 
-
-<!-- features -->
-    <a id='features'></a>   
-      <div class="marketing" style='background-color:#f5f5f5;padding-top:60px;'>
-        <div class='container'>
-          <div class='row'>
-            <div class='fancy-header'>
-              <h1>Main Features</h1>
-              <h2 class="highlight">Modular architecture</h2>
-            </div>
-          </div>
-        </div><!--container-->
-        <div class="container marketing">
-        <!-- START THE FEATURETTES -->
-        <div class="row featurette">
-          <div class="col-md-5">
-            <img class="featurette-image img-responsive rounded" src="/shared/images/argo-overview.png" alt="ARGO Platform">
-          </div>
-          <div class="col-md-7">
-            <h2 class="featurette-heading">ARGO Components. <span class="text-muted">Modular architecture.</span></h2>
-            <p class="lead">At its core, ARGO uses a flexible monitoring engine, a powerful analytics engine and a high performance API.<br/><br/>
-Embracing a modular, pluggable architecture, ARGO can easily support a wide range of architectures.<br/><br/>
-Out of the box: connectors for POEM, GOCDB, BDII and Gstat.  </p>
-          </div>
-        </div> <!-- row featurette -->
-
-        <div class='row'>
-          <div class="heading">
-            <h1>Horizontal scaling</h1>
-          </div><!-- div.heading -->
-        </div>
-
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">ARGO Messaging. <span class="text-muted">Horizontal scaling.</span></h2>
-            <p class="lead"> ARGO Monitoring Engine can publish monitoring results in real time to any message broker service, which supports the STOMP or AMQP protocol.  <br/><br/> Monitoring result collectors can listen on the message broker service,  retrieve the results and forward them to the compute engine. </p>
-          </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-responsive rounded" src="/shared/images/argo-horizontal-scaling.png" alt="ARGO Messaging.Horizontal scaling.">
-          </div>
-        </div> <!-- row featurette -->
-
-        <div class='row'>
-          <div class="heading">
-            <h1>Scalable Availability and Reliability computations</h1>
-          </div><!-- div.heading -->
-        </div>
-        <div class="row featurette">
-          <div class="col-md-4">
-            <img class="featurette-image img-responsive rounded" src="/shared/images/argo-ar.png" alt="ARGO Compute Engine">
-          </div>
-          <div class="col-md-8">
-            <h2 class="featurette-heading">Compute Engine. <span class="text-muted">Availability and Reliability computations.</span></h2>
-            <p class="lead"><strong>Metric profiles </strong><br/> define which metrics are relevant for a specific type of service<br/> <strong>Multiple Topologies</strong><br/> can describe simple and complex infrastructures<br/> <strong>Multiple Availability Profiles</strong><br/> for flexible definition of business logic<br/> <strong>Support of downtimes</strong><br/> allows us to define whether a service is supposed to be unavailable or not? <br/> <strong>Custom factors</strong><br/> because not all services have the same importance from SG B <br/> <strong>White listing</strong> of monitoring sources<br/> <strong>Re-computations</strong> on demand </p>
-          </div> 
-        </div> <!-- row featurette -->
-        <hr class="featurette-divider">
-      </div>
-      </div>
-
+  
 <!--footer -->
     <footer  id="footer" class="footer">
 	<div class='footer_top'>       

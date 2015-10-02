@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>ARGO Availability and Reliability Monitoring - Overview | ARGO</title>
+  <title>ARGO Availability and Reliability Monitoring - API documentation | ARGO</title>
   <link rel="alternate" type="application/atom+xml" title="API Changes" href="/changes.atom" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <![endif]-->
 </head>
 
-<body class="api">
+<body class="documentation">
   <!-- Fixed navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container">
@@ -75,11 +75,11 @@
 
   <div class='container-fluid' >
     <div class='row'>
-      <div class="col-md-2 sidebar" >
-                 <div class="list-group" >	
+        <div class="col-md-2 sidebar">
+                   <div class="list-group" >	
             <a class="list-group-item disabled blue" href="/overview/">Documentation</a>
-          	
-            <a class="list-group-item active" href="/overview/">Overview</a>
+          
+            <a class="list-group-item" href="/overview/">Overview</a>
           
             <a class="list-group-item disabled blue" href="/guides/installation/">Installation</a>
           
@@ -121,7 +121,7 @@
 
 	  </div>
           
-            <a class="list-group-item" href="/guides/api/" id='caretclick' data-caret='open'> 
+            <a class="list-group-item active" href="/guides/api/" id='caretclick' data-caret='open'>
           
           <em class="fa fa-cogs"></em> API <span class="caret" ></span></a>
 
@@ -147,7 +147,7 @@
             <em class="fa fa-cogs"></em> Recalculation Requests</a>
 
             
-              <a class="list-group-item-level2"  href="/guides/api/availabilityprofs/">
+              <a class="list-group-item-level2 active"  href="/guides/api/availabilityprofs/">
             
             <em class="fa fa-cogs"></em> API - Availability Profiles</a>
 
@@ -167,61 +167,403 @@
 
 
 
-      </div><!--sidebar-->
-      <div class="col-md-8 main">
-        	
-          <h1 class="highlight">
-          
-            <em class='fa fa-file-text-o'></em> 
-          
-          Overview</h1>
-        
-        <p class="lead"> ARGO is a lightweight service for Service Level Monitoring designed for medium and large sized Research Infrastructures. The ARGO software stack is comprised of the following components (products)</p>
-        
-
-        <div style="padding:30px;" class="marketing">
-          <div class="row">
-            <div class="col-lg-4">
-              <em class="fa fa-refresh fa-6 fa-blue"></em>
-              <h2>Sync components</h2> 
-              <p>This document describes the sync components.</p>
-              <p><a role="button" href="/guides/sync/" class="btn btn-default">View details »</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-              <em class="fa fa-check-square-o fa-6 fa-blue"></em>
-              <h2>Poem service</h2> 
-              <p>This document describes the POEM service for ARGO framework.</p>
-              <p><a role="button" href="/guides/poem/" class="btn btn-default">View details »</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-              <em class="fa fa-send-o fa-6 fa-blue"></em>  
-              <h2>Consumer</h2> 
-              <p>Data is collected using an ActiveMQ message broker network.</p>
-              <p><a role="button" href="/guides/consumer/" class="btn btn-default">View details »</a></p>
-            </div><!-- /.col-lg-4 -->
-          </div><!-- /.row -->
-          <div class="row">
-            <div class="col-lg-4">
-              <em class="fa fa-cog fa-6 fa-blue"></em>
-              <h2>Compute Engine</h2> 
-              <p>This document describes the Compute service</p>
-              <p><a role="button" href="/guides/compute/" class="btn btn-default">View details »</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-              <em class="fa fa-cogs fa-6 fa-blue"></em>
-              <h2>API</h2> 
-              <p>This document describes the API service</p>
-              <p><a role="button" href="/guides/api/" class="btn btn-default">View details »</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-              <em class="fa fa-connectdevelop fa-6 fa-blue"></em>  
-              <h2>Web UI</h2> 
-              <p>using the HTTP application protocol.</p>
-              <p><a role="button" href="/guides/webui/" class="btn btn-default">View details »</a></p>
-            </div><!-- /.col-lg-4 -->
-          </div><!-- /.row -->
         </div>
+        <div class="col-md-8 main">
+          	
+            <h1 class="highlight">
+            
+              <i class='fa fa-cogs'></i> 
+            
+            API - Availability Profiles</h1>
+          
+          <p class="lead"> API Calls for managing Availability Profiles</p>
+          <h2 id="api-data">API Data</h2>
 
+<table>
+<tbody>
+<tr>
+<td>Base URL</td>
+<td><code>https://host:port/api/v2/</code></td>
+</tr>
+<tr>
+<td><strong>Default Port</strong></td>
+<td><code>443</code></td>
+</tr>
+<tr>
+<td><strong>Central instance of the ARGO production service</strong></td>
+<td><code>https://snf-629551.vm.okeanos.grnet.gr/api/v2/</code></td>
+</tr>
+</tbody>
+</table>
+
+
+          
+<h2 id="api-calls">API Calls</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>Description</td>
+      <td>Shortcut</td>
+    </tr>
+    <tr>
+      <td>GET: List Availability Profiles</td>
+      <td>This method can be used to retrieve a list of current Availability profiles used by the Compute Engine.</td>
+      <td><a href="#1"> Description</a></td>
+    </tr>
+    <tr>
+      <td>POST: Create a new availability profile</td>
+      <td>This method can be used to insert a new Availability Profile onto the Compute Engine.</td>
+      <td><a href="#2"> Description</a></td>
+    </tr>
+    <tr>
+      <td>PUT: Update an existing Availability Profile</td>
+      <td>This method can be used to update an existing Availability Profile onto the Compute Engine.</td>
+      <td><a href="#3"> Description</a></td>
+    </tr>
+    <tr>
+      <td>DELETE: Delete an availability profile</td>
+      <td>This method can be used to delete an existing Availability Profile.</td>
+      <td><a href="#4"> Description</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a id="1"></a></p>
+
+<h2 id="get-list-availability-profiles">GET: List Availability Profiles</h2>
+
+<p>This method can be used to retrieve a list of current Availability profiles used by the Compute Engine.</p>
+
+<h3 id="input">Input</h3>
+
+<pre><code>/AP?[name]&amp;[namespace]
+</code></pre>
+
+<h4 id="parameters">Parameters</h4>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Type</td>
+      <td>Description</td>
+      <td>Required</td>
+      <td>Default value</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td>Profile name (both name and namespace are needed)</td>
+      <td>YES</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>namespace</code></td>
+      <td>Profile namespace (both name and namespace are needed)</td>
+      <td>YES</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="response">Response</h3>
+
+<p>Headers: <code>Status: 200 OK</code></p>
+
+<h4 id="response-body">Response body</h4>
+
+<pre><code>&lt;root&gt;
+  &lt;profile id="some_id" name="name" namespace="namespace" poems="poem_name"&gt;
+    &lt;AND&gt;
+      &lt;OR&gt;
+        &lt;Group service_flavor="A_FLAVOR"/&gt;
+        &lt;Group service_flavor="B_FLAVOR"/&gt;
+        &lt;Group service_flavor="C_FLAVOR"/&gt;
+        &lt;Group service_flavor="D_FLAVOR"/&gt;
+        &lt;Group service_flavor="E_FLAVOR"/&gt;
+      &lt;/OR&gt;
+      &lt;OR&gt;
+        &lt;Group service_flavor="F_FLAVOR"/&gt;
+        &lt;Group service_flavor="G_FLAVOR"/&gt;
+      &lt;/OR&gt;
+      &lt;OR&gt;
+        &lt;Group service_flavor="H_FLAVOR"/&gt;
+      &lt;/OR&gt;
+    &lt;/AND&gt;
+  &lt;/profile&gt;
+  .
+  .
+&lt;/root&gt;
+</code></pre>
+
+<p><a id="2"></a></p>
+
+<h2 id="post-create-a-new-availability-profile">POST: Create a new availability profile</h2>
+
+<p>This method can be used to insert a new Availability Profile onto the Compute Engine.</p>
+
+<h3 id="input-1">Input</h3>
+
+<pre><code>/AP
+</code></pre>
+
+<h4 id="parameters-json-formatted-string">Parameters (Json formatted string)</h4>
+
+<pre><code>{ 
+  "name" : &lt;name&gt;, 
+  "namespace" :&lt;namespace&gt;, 
+  "poems" : [&lt;POEM profile&gt;],
+  "groups" : [ [&lt;flavor1&gt;, &lt;flavor2&gt;,... ],...,[&lt;flavorN&gt;] ]
+}
+</code></pre>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Type</td>
+      <td>Description</td>
+      <td>Required</td>
+      <td>Default value</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td>Profile name (both name and namespace are needed)</td>
+      <td>YES</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>namespace</code></td>
+      <td>Profile namespace (both name and namespace are needed)</td>
+      <td>YES</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>poems</code></td>
+      <td>Low level profile matching checks with service flavors</td>
+      <td>YES</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>groups</code></td>
+      <td>Group of service flavors groups</td>
+      <td>YES</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="request-headers">Request headers</h4>
+
+<pre><code>x-api-key: "shared_key_value"
+Content-Type: application/json
+</code></pre>
+
+<h4 id="example">Example</h4>
+
+<p>This example creates a new availability profile <code>ap-test-2</code> for the <code>someRI</code> tenant. The fictional service flavors <code>Torque</code>, <code>Slurm</code> and <code>Moab</code> are logically <strong>ORed</strong> in the calculation of this service group as they more or less represent a similar functionality (lets name this <strong>the compute resource scheduling capability of the RI</strong>). Likewise the fictional <code>iRods</code> and <code>GridFTP</code> service flavors are logically <strong>ORed</strong> in the calculation as they respresent in this context a <strong>storage capability</strong> of the given RI. Finally a valuable resource that is taken in consideration is the fictional IS service flavor which provides the <strong>information service capability</strong> for the given RI. There is only one flavor of that kind on the whole RI Tier hence it makes sense to leave it alone in the A/R calculation. The overall A/R metrics are deduced by grouping these three capabilities ( compute resource scheduling, storage and information service) with a logical <strong>AND</strong> operation. The check (probe) results that are taken into consideration within this calculation are defined within the poem profile, which is extracted via a connector from the POEM endpoint of the RI.</p>
+
+<pre><code>{  
+  "name":"ap-test-2",
+  "namespace":"someRI",
+  "groups":[  
+    [  
+      "Torque",
+      "Slurm",
+      "Moab"
+    ],
+    [  
+      "iRods",
+      "GridFTP"
+    ],
+    [  
+      "IS"
+    ]
+  ],
+  "poems":[  
+    "someRI.root.CRITICAL"
+  ]
+}
+</code></pre>
+
+<h3 id="response-1">Response</h3>
+
+<p>Headers: <code>Status: 200 OK</code></p>
+
+<h4 id="response-body-1">Response body</h4>
+
+<h5 id="successful-creation-of-profile">Successful creation of profile</h5>
+
+<pre><code>&lt;root&gt;
+   &lt;Message&gt;Availability Profile record successfully created&lt;/Message&gt;
+&lt;/root&gt;
+</code></pre>
+
+<h5 id="profile-exists">Profile exists</h5>
+
+<pre><code>&lt;root&gt;
+   &lt;Message&gt;An availability profile with that name already exists&lt;/Message&gt;
+&lt;/root&gt;
+</code></pre>
+
+<p><a id="3"></a></p>
+
+<h2 id="put-update-an-existing-availability-profile">PUT: Update an existing Availability Profile</h2>
+
+<p>This method can be used to update an existing Availability Profile onto the Compute Engine.</p>
+
+<h3 id="input-2">Input</h3>
+
+<pre><code>/AP/{id}
+</code></pre>
+
+<h4 id="parameters--json-formatted-string">Parameters ( Json formatted string)</h4>
+
+<pre><code>{ 
+  "name" : &lt;name&gt;, 
+  "namespace" :&lt;namespace&gt;, 
+  "poems" : [&lt;POEM profile&gt;],
+  "groups" : [ [&lt;flavor1&gt;, &lt;flavor2&gt;,... ],...,[&lt;flavorN&gt;] ]
+}
+</code></pre>
+
+<h5 id="input-parameters">Input parameters</h5>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Type</td>
+      <td>Description</td>
+      <td>Required</td>
+      <td>Default value</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>The availability profile id</td>
+      <td>YES</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="json-parameters">JSON parameters</h5>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Type</td>
+      <td>Description</td>
+      <td>Required</td>
+      <td>Default value</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td>Profile name (both name and namespace are needed)</td>
+      <td>YES</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>namespace</code></td>
+      <td>Profile namespace (both name and namespace are needed)</td>
+      <td>YES</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>poems</code></td>
+      <td>Low level profile matching checks with service flavors</td>
+      <td>YES</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>groups</code></td>
+      <td>Group of service flavors groups</td>
+      <td>YES</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Check the POST: Create a new availability profile example.</p>
+
+<h4 id="request-headers-1">Request headers</h4>
+
+<pre><code>x-api-key: "shared_key_value"
+Content-Type: application/json
+</code></pre>
+
+<h3 id="response-2">Response</h3>
+
+<p>Headers: <code>Status: 200 OK</code></p>
+
+<h4 id="response-body-2">Response body</h4>
+
+<h5 id="successful-update">Successful update</h5>
+
+<pre><code>&lt;root&gt;
+   &lt;Message&gt;Update successful&lt;/Message&gt;
+&lt;/root&gt;
+</code></pre>
+
+<h5 id="profile-does-not-exist">Profile does not exist</h5>
+
+<pre><code>&lt;root&gt;
+   &lt;Message&gt;No profile matching the requested id&lt;/Message&gt;
+&lt;/root&gt;
+</code></pre>
+
+<p><a id="4"></a></p>
+
+<h2 id="delete-delete-an-availability-profile">DELETE: Delete an availability profile</h2>
+
+<p>This method can be used to delete an existing Availability Profile.</p>
+
+<h3 id="input-3">Input</h3>
+
+<pre><code>/AP/{id}
+</code></pre>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Type</td>
+      <td>Description</td>
+      <td>Required</td>
+      <td>Default value</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>The availability profile id</td>
+      <td>YES</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="request-headers-2">Request headers</h4>
+
+<pre><code>x-api-key: "shared_key_value"
+</code></pre>
+
+<h3 id="response-3">Response</h3>
+
+<p>Headers: <code>Status: 200 OK</code></p>
+
+<h4 id="response-body-3">Response body</h4>
+
+<h5 id="successful-delete">Successful delete</h5>
+
+<pre><code>&lt;root&gt;
+   &lt;Message&gt;Delete successful&lt;/Message&gt;
+&lt;/root&gt;
+</code></pre>
+
+<h5 id="profile-does-not-exist-1">Profile does not exist</h5>
+
+<pre><code>&lt;root&gt;
+   &lt;Message&gt;No profile matching the requested id&lt;/Message&gt;
+&lt;/root&gt;
+</code></pre>
 
 
         </div><!--col-md-8-->
