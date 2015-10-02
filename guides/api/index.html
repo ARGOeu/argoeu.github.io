@@ -25,7 +25,6 @@
   <link rel="stylesheet" href="/shared/css/font-beba.css">
 
   <link href="/shared/css/custom.css" rel="stylesheet">
-  <script src="/shared/js/ie-emulation-modes-warning.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -45,28 +44,28 @@
 		    <span class="icon-bar"></span>
 		    <span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="#"><img src='/shared/images/argo-logo.png' alt='Argo'  /></a>
+		  <a class="navbar-brand" href="/index.html"><img src='/shared/images/argo-logo.png' alt='ARGO'  /></a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 		  <ul class="nav navbar-nav navbar-right">
-		    <li class="active"><a href="/index.html#">Home</a></li>
+		    <li class="active"><a href="/index.html">Home</a></li>
 		    <li><a href="/index.html#what">About</a></li>
 		    <li><a href="/index.html#features">Features</a></li>
 		    <li><a href="/use-cases/">Use cases</a></li>
 		    <li class="dropdown">
 		      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
 		      <ul class="dropdown-menu" role="menu">
-			<li><a href="/overview/"><i class="fa fa-file-text-o"></i>  Overview</a></li>
-			<li><a href="/guides/installation/"><i class="fa fa-file-text-o"></i>  Installation</a></li>
-			<li><a href="/guides/sync/"><i class="fa fa-refresh"></i > Sync components</a></li>
-			<li><a href="/guides/poem/"><i class="fa fa-check-square-o"></i>  Poem service</a></li>
-			<li><a href="/guides/consumer/"><i class="fa fa-send-o"></i>  Consumer</a></li>
-			<li><a href="/guides/compute/"><i class="fa fa-cog"></i>  Compute Engine</a></li>
-			<li><a href="/guides/webui/"><i class="fa fa-connectdevelop"></i>  Web UI</a></li>
+			<li><a href="/overview/"><em class="fa fa-file-text-o"></em>  Overview</a></li>
+			<li><a href="/guides/installation/"><em class="fa fa-file-text-o"></em>  Installation</a></li>
+			<li><a href="/guides/sync/"><em class="fa fa-refresh"></em> EGI Connectors</a></li>
+			<li><a href="/guides/poem/"><em class="fa fa-check-square-o"></em>  Poem service</a></li>
+			<li><a href="/guides/consumer/"><em class="fa fa-send-o"></em>  Consumer</a></li>
+			<li><a href="/guides/compute/"><em class="fa fa-cog"></em>  Compute Engine</a></li>
+			<li><a href="/guides/webui/"><em class="fa fa-connectdevelop"></em>  Web UI</a></li>
 			<li class="divider"></li>
 			<li class="dropdown-header">Developers</li>
-			<li><a href="/guides/api/"><i class="fa fa-cogs"></i>  API </a></li>
-			<li><a href="#"><i class="fa fa-github-alt"></i>  Github</a></li>
+			<li><a href="/guides/api/"><em class="fa fa-cogs"></em>  API </a></li>
+			<li><a href="#"><em class="fa fa-github-alt"></em>  Github</a></li>
 		      </ul>
 		    </li>
 		  </ul>
@@ -76,130 +75,194 @@
 
   <div class='container-fluid' >
     <div class='row'>
-        <div class="col-md-2 sidebar">
-                   <div class="list-group">	
-            <a class="list-group-item disabled blue" href="#">Documentation</a>
+      <div class="col-md-2 sidebar" >
+                 <div class="list-group" >	
+            <a class="list-group-item disabled blue" href="/overview/">Documentation</a>
           
             <a class="list-group-item" href="/overview/">Overview</a>
           
+            <a class="list-group-item disabled blue" href="/guides/installation/">Installation</a>
           
-            <a class="list-group-item" href="/guides/installation/">Installation</a>
-          
-            <a class="list-group-item disabled blue" href="#">Components</a>
-          
-            <a class="list-group-item" href="/guides/sync/"><i class="fa fa-refresh"></i> Sync components</a>
+            <a class="list-group-item" href="/guides/installation/"><em class="fa fa-terminal"></em> Standalone</a>
           
           
-            <a class="list-group-item" href="/guides/poem/"><i class="fa fa-check-square-o"></i> Poem service</a>
+            <a class="list-group-item" href="/guides/installation_cluster/"><em class="fa fa-sitemap"></em> Cluster Mode</a>
+          
+            <a class="list-group-item disabled blue" href="/guides/sync/">Components</a>
+          
+            <a class="list-group-item" href="/guides/sync/"><em class="fa fa-refresh"></em> EGI Connectors</a>
           
           
-            <a class="list-group-item" href="/guides/consumer/"><i class="fa fa-send-o"></i> Consumer</a>
+            <a class="list-group-item" href="/guides/poem/"><em class="fa fa-check-square-o"></em> Poem service</a>
+          
+          
+            <a class="list-group-item" href="/guides/consumer/"><em class="fa fa-send-o"></em> Consumer</a>
           
             
-            <a class="list-group-item " href="/guides/compute/"><i class="fa fa-cog"></i> Compute Engine</a>
+            <a class="list-group-item " href="/guides/compute/"><em class="fa fa-cog"></em> Compute Engine</a>
           
-          	
-            <a class="list-group-item active" href="/guides/api/">
+  	  <div id='caret-data1'>
+
+            
+              <a class="list-group-item-level2"  href="/guides/compute/compute-input/">
+            
+            <em class="fa fa-cog"></em> Compute Engine Input </a>
+ 	    
+              <a class="list-group-item-level2"  href="/guides/compute/compute-job-configuration/">
+            
+            <em class="fa fa-cog"></em> Compute engine job configurations </a>
+
+ 
+ 	    
+              <a class="list-group-item-level2"  href="/guides/compute/cli-interaction/">
+            
+            <em class="fa fa-cog"></em> Compute Engine CLI </a>
+
+
+	  </div>
           
-          <i class="fa fa-cogs"></i> API</a>
+            <a class="list-group-item active" href="/guides/api/" id='caretclick' data-caret='open'>
           
-            <a class="list-group-item" href="/guides/webui/"><i class="fa fa-connectdevelop"></i> Web UI</a>
-          
-          </div> <!--list group-->
+          <em class="fa fa-cogs"></em> API <span class="caret" ></span></a>
+
+          <div id='caret-data'>
+            
+              <a class="list-group-item-level2"  href="/guides/api/status-results/">
+            
+            <em class="fa fa-cogs"></em> API - Status results</a>
+
+            
+              <a class="list-group-item-level2"  href="/guides/api/avail-reliab/">
+            
+            <em class="fa fa-cogs"></em> API - Availabilities & Reliabilities</a>
+
+            
+              <a class="list-group-item-level2"  href="/guides/api/metric-result/">
+            
+            <em class="fa fa-cogs"></em> Metric Result</a>
+
+            
+              <a class="list-group-item-level2"  href="/guides/api/recalculationrequests/">
+            
+            <em class="fa fa-cogs"></em> Recalculation Requests</a>
+
+            
+              <a class="list-group-item-level2"  href="/guides/api/availabilityprofs/">
+            
+            <em class="fa fa-cogs"></em> API - Availability Profiles</a>
+
+            
+              <a class="list-group-item-level2"  href="/guides/api/poemprofiles/">
+            
+            <em class="fa fa-cogs"></em> API - POEM Profiles</a>
 
         </div>
-        <div class="col-md-8 main">
-          	
-            <h1 class="highlight">
-            
-              <i class='fa fa-cogs'></i> 
-            
-            API documentation</h1>
           
-          <p class="lead"> This document describes the API service, using the HTTP application protocol. This API uses XML as the primary exchange format.</p>
+            <a class="list-group-item" href="/guides/webui/"><em class="fa fa-connectdevelop"></em> Web UI</a>
           
-<h2 id="api-data">API Data</h2>
+          </div> <!--list group-->
+          <p>&nbsp;</p>
+
+          
+
+
+
+      </div><!--sidebar-->
+      <div class="col-md-8 main">
+        	
+          <h1 class="highlight">
+          
+            <em class='fa fa-cogs'></em> 
+          
+          API documentation</h1>
+        
+        <p class="lead"> This document describes the API service, using the HTTP application protocol. This API uses XML as the primary exchange format.</p>
+        <h2 id="api-data">API Data</h2>
 
 <table>
-  <tbody>
-    <tr>
-      <td>Base URL</td>
-      <td><code>https://\&lt;host\&gt;:\&lt;port\&gt;/api/v1/</code></td>
-    </tr>
-    <tr>
-      <td><strong>Default Port</strong></td>
-      <td><code>8080</code></td>
-    </tr>
-    <tr>
-      <td><strong>Central instance of the ARGO production service</strong></td>
-      <td><code>https://snf-629551.vm.okeanos.grnet.gr:8080/api/v1/</code></td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td>Base URL</td>
+<td><code>https://host:port/api/v2/</code></td>
+</tr>
+<tr>
+<td><strong>Default Port</strong></td>
+<td><code>443</code></td>
+</tr>
+<tr>
+<td><strong>Central instance of the ARGO production service</strong></td>
+<td><code>https://snf-629551.vm.okeanos.grnet.gr/api/v2/</code></td>
+</tr>
+</tbody>
 </table>
 
-<h2 id="get-method">GET method</h2>
 
-<h3 id="input">Input</h3>
+        
 
-<pre><code>/api/v1/service_availability_in_profile?[start_time]&amp;[end_time]&amp;[vo_name]&amp;[profile_name]&amp;[group_type]&amp;[availability_period]&amp;[output]&amp;[namespace]&amp;[group_name]&amp;[service_flavour]&amp;[service_hostname] 
-</code></pre>
+        <div style="padding:30px;" class="marketing">
+          <div class="row">
+            <div class="col-lg-4">
+              <h2>
+                <a  href="/guides/api/status-results/" >
+                  API - Status results</a>
+              </h2> 
+              <div class="list-group">
+                <a class="list-group-item disabled">API calls for retrieving monitoring status results</a>
+                <a class="list-group-item-level2" href='/guides/api/status-results/#1'><strong>GET: </strong>List Service Metric Status Timelines</a>
+                <a class="list-group-item-level2" href='/guides/api/status-results/#2'><strong>GET: </strong> List Service Endpoint Status Timelines </a>
+                <a class="list-group-item-level2" href='/guides/api/status-results/#3'><strong>GET: </strong>List Service Flavor Status Timelines</a>
+                <a class="list-group-item-level2" href='/guides/api/status-results/#4'><strong>GET: </strong> List Site Status timelines</a>
+              </div>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <h2><a href="/guides/api/avail-reliab/" >API - Availabilities & Reliabilities</a></h2> 
+              <div class="list-group">
+                <a class="list-group-item disabled">API calls for retrieving computed Availabilities and Reliabilities</a>
+                <a class="list-group-item-level2" href='/guides/api/avail-reliab/#1'><strong>GET: </strong> List Availabilities and Reliabilities for Groups</a>
+                <a class="list-group-item-level2" href='/guides/api/avail-reliab/#2'><strong>GET: </strong> List Availabilities and Reliabilities for Service Flavors </a>
+              </div>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <h2>
+                <a href="/guides/api/recalculationrequests/">
+                  API - Recalculation Requests</a>
+              </h2> 
+              <div class="list-group">
+                <a class="list-group-item disabled">API Calls for listing and creating new recalculation requests</a>
+                <a class="list-group-item-level2" href='/guides/api/recalculationrequests/#1'><strong>GET: </strong> List Recalculation Requests</a>
+                <a class="list-group-item-level2" href='/guides/api/recalculationrequests/#2'><strong>POST: </strong> Create a new recalculation request </a>
+              </div>
+            </div><!-- /.col-lg-4 -->
+          </div><!-- /.row -->
+          <div class="row">
+            <div class="col-lg-4">
+              <h2>
+              <a href="/guides/api/availabilityprofs/"/>
+                API - Availability Profiles</a></h2> 
+              <div class="list-group">
+                <a class="list-group-item disabled">API Calls for managing Availability Profiles</a>
+                  <a class="list-group-item-level2" href='/guides/api/availabilityprofs/#1'><strong>GET: </strong> List Availability Profiles</a>
+                  <a class="list-group-item-level2" href='/guides/api/availabilityprofs/#2'><strong>POST: </strong> Create a new availability profile</a>
+                  <a class="list-group-item-level2" href='/guides/api/availabilityprofs/#3'><strong>PUT: </strong> Update an existing Availability Profile</a>
+                  <a class="list-group-item-level2" href='/guides/api/availabilityprofs/#4'><strong>DELETE: </strong> Delete an availability profile</a>
+              </div>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <h2>
+                <a href="/guides/api/poemprofiles/">
+                API - POEM Profiles
+                </a>
+              </h2>
+              <div class="list-group">
+                <a class="list-group-item disabled">API Calls for retrieving available POEM profiles</a>
+                <a  class="list-group-item-level2" href='/guides/api/poemprofiles/#1'><strong>GET: </strong> List POEM Profiles</a>
+              </div>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+            </div><!-- /.col-lg-4 -->
+          </div><!-- /.row -->
+        </div>
 
-<ul>
-  <li>mandatory
-    <ul>
-      <li>
-<code>start_time</code>: UTC time in W3C format </li>
-      <li>
-<code>end_time</code>: UTC time in W3C format</li>
-      <li>
-<code>vo_name</code>: Name of the VO requested. May appear more than once. (eg: ops)</li>
-      <li>
-<code>profile_name</code>: Name of the profile requested. May appear more than once. (eg: CMS_CRITICAL)</li>
-      <li>
-<code>group_type</code>: Type of the aggregation grouping requested.  May appear more than once. (eg: CMS_Site)</li>
-      <li>
-<code>availability_period</code>: Results granularity. Possible values: ‘HOURLY’, ‘DAILY’, ‘WEEKLY’, ‘MONTHLY’</li>
-    </ul>
-  </li>
-  <li>optional
-    <ul>
-      <li>
-<code>output</code>: Type of the output format. Default: XML, Possible values: XML, json</li>
-      <li>
-<code>namespace</code>: Profile namespace. May appear more than once. (eg: ch.cern.sam)</li>
-      <li>
-<code>group_name</code>: Site name. May appear more than once</li>
-      <li>
-<code>service_flavour</code>: Service flavour name. May appear more than once. (eg: SRMv2)</li>
-      <li>
-<code>service_hostname</code>: Service hostname. May appear more than once. (eg: ce202.cern.ch)</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="output">Output</h3>
-
-<pre><code>&lt;pre&gt;
-  &lt;root&gt;
-    &lt;Profile name="A_PROFILE_NAME" namespace="a_namespace.grid.auth.gr" defined_by_vo_name="A_VO"&gt;
-      &lt;Service hostname="a_host.grid.auth.gr" type="A_FLAVOR" flavor="A_FLAVOR"&gt;
-        &lt;Availability timestamp="2013-08-01T00:00:00Z" availability="1" reliability="1" maintenance="-1"&gt;&lt;/Availability&gt;
-        &lt;Availability timestamp="2013-08-01T01:00:00Z" availability="1" reliability="1" maintenance="-1"&gt;&lt;/Availability&gt;
-        &lt;Availability timestamp="2013-08-01T02:00:00Z" availability="1" reliability="1" maintenance="-1"&gt;&lt;/Availability&gt;
-        &lt;Availability timestamp="2013-08-01T03:00:00Z" availability="1" reliability="1" maintenance="-1"&gt;&lt;/Availability&gt;
-        &lt;Availability timestamp="2013-08-01T04:00:00Z" availability="1" reliability="1" maintenance="-1"&gt;&lt;/Availability&gt;
-        &lt;Availability timestamp="2013-08-01T05:00:00Z" availability="1" reliability="1" maintenance="-1"&gt;&lt;/Availability&gt;
-        &lt;Availability timestamp="2013-08-01T06:00:00Z" availability="1" reliability="1" maintenance="-1"&gt;&lt;/Availability&gt;
-        &lt;Availability timestamp="2013-08-01T07:00:00Z" availability="1" reliability="1" maintenance="-1"&gt;&lt;/Availability&gt;
-        &lt;Availability timestamp="2013-08-01T08:00:00Z" availability="1" reliability="1" maintenance="-1"&gt;&lt;/Availability&gt;
-        .
-        .
-        .
-      &lt;/Service&gt;
-    &lt;/Profile&gt;
-  &lt;/root&gt;
-&lt;/pre&gt;
-</code></pre>
 
 
         </div><!--col-md-8-->
@@ -257,6 +320,9 @@
 	</div>
      </div>	
     </footer>
+    <a href="#" class="back-to-top" style="display: inline;">
+      <i class="fa fa-arrow-circle-up"></i>
+    </a>
 <!--/footer -->
 
 
@@ -279,7 +345,22 @@
         play: 10000
       });
 
-    });
+        var offset = 250;
+        var duration = 300;
+        jQuery(window).scroll(function() {
+          if (jQuery(this).scrollTop() > offset) {
+            jQuery('.back-to-top').fadeIn(duration);
+          } else {
+            jQuery('.back-to-top').fadeOut(duration);
+          }
+        });
+        jQuery('.back-to-top').click(function(event) {
+          event.preventDefault();
+          jQuery('html, body').animate({scrollTop: 0}, duration);
+          return false;
+        })
+      });
+
   </script>
 
 </body>
