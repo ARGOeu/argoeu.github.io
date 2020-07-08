@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Metrics - POEM documentation [V1]</title>
+  <title>Packages - POEM documentation [V1]</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Metrics";
-    var mkdocs_page_input_path = "tenant_metrics.md";
-    var mkdocs_page_url = "/tenant_metrics/";
+    var mkdocs_page_name = "Packages";
+    var mkdocs_page_input_path = "tenant_packages.md";
+    var mkdocs_page_url = "/tenant_packages/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
@@ -118,23 +118,9 @@
                     
     <a class="" href="../tenant_probes/">Probes</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Metrics</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#metrics">Metrics</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#list-of-metrics">List of metrics</a></li>
-        
-            <li><a class="toctree-l4" href="#metric-details">Metric details</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../tenant_metrics/">Metrics</a>
                 </li>
                 <li class="">
                     
@@ -187,15 +173,11 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
-        
-          <li>Tenant POEM &raquo;</li>
-        
-      
     
-    <li>Metrics</li>
+    <li>Packages</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/ARGOeu/poem-2/edit/master/docs/tenant_metrics.md"
+        <a href="https://github.com/ARGOeu/poem-2/edit/master/docs/tenant_packages.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -205,37 +187,22 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="metrics">Metrics</h1>
-<p>Metric is a procedure which checks specific functionality of a given service, i.e. single measurement (e.g. <code>org.nagios.WebCheck</code>, <code>hr.srce.CertLifetime</code>). </p>
-<p>Since tenant users are not allowed to create metrics themselves, metric templates are created on SuperAdmin POEM which can be imported by tenant super admins as metrics through <a href="../tenant_metric_templates/">Metric Template Page</a>.</p>
-<h2 id="list-of-metrics">List of metrics</h2>
-<p>Metrics page is accessible through menu on the left side. It is shown in the image below.</p>
-<p><img alt="Tenant Metrics" src="../figures/tenant_metrics.png" /></p>
-<p>Metrics can be filtered by name, probe, group and type (active or passive). Any particular metric can be accessed by clicking its name. Also one may see probes associated to metrics by clicking probe's name.</p>
-<h2 id="metric-details">Metric details</h2>
-<p>Particular metric's page is shown in the image below.</p>
-<p><img alt="Tenant Metric Detail" src="../figures/tenant_metrics_details.png" /></p>
-<p>Most of the fields is disabled. Tenant users are only allowed to modify four of the configuration values and group. User may only choose among groups that are associated to him. Exception to this rule is user with superuser permission, (s)he can pick any existing group. </p>
-<p>Fields descriptions are given in <a href="../superadmin_metric_templates/#field-descriptions">metric template documentation</a>.</p>
-<p>In case user has no permission to modify the metric, there is going to appear a warning message on top of page, as shown in image below.</p>
-<p><img alt="Tenant Metric Readonly" src="../figures/tenant_metric_readonly.png" /></p>
-<h3 id="metric-history">Metric history</h3>
-<p>By clicking <strong>History</strong> button, user can see all the changes made to the metric, when they were made, and by whom.</p>
-<h3 id="adding-new-metrics">Adding new metrics</h3>
-<p>Tenant users cannot add new metrics by themselves. Metrics can be imported from available metric templates by superuser on <a href="../tenant_metric_templates/">metric template page</a>. If none of the metric templates is satisfying, the user will have to ask a super admin to add new metric template to SuperAdmin POEM.</p>
+                <h1 id="packages">Packages</h1>
+<p>Packages are <code>.rpm</code> packages which provide probes. </p>
+<h2 id="list-of-packages">List of packages</h2>
+<p>The page shows packages that provide probes and metrics the tenant uses. It is shown in the image below. It is available through <a href="../tenant_administration/">Administration page</a>, and as such is only available to super users. </p>
+<p>Packages can be filtered by name, and repo they are part of. </p>
+<p><img alt="Tenant Package List" src="../figures/tenant_packages.png" /></p>
+<h2 id="package-details">Package details</h2>
+<p>By clicking the package name, the user is redirected to package detail page. It is shown in the image below. </p>
+<p><img alt="Tenant Package Details" src="../figures/tenant_package_details.png" /></p>
+<p>Tenant users are not allowed to change anything in the page. However, they have the possibility to choose which version of the package they wish to use. They do so by choosing the version in version drop down field, and clicking the <strong>Update metrics</strong> button. That way, metrics will automatically be updated with probes with corresponding versions. </p>
+<p>When user clicks the <strong>Update metrics</strong> button, there will be a modal dialogue which informs him/her of the changes that are going to take place and asks for confirmation (shown in the image below). </p>
+<p><img alt="Tenant Package Modal" src="../figures/tenant_package_modal_dialogue.png" /></p>
               
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../tenant_aggregation_profiles/" class="btn btn-neutral float-right" title="Aggregation Profiles">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../tenant_probes/" class="btn btn-neutral" title="Probes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -263,10 +230,6 @@
           <a href="https://github.com/ARGOeu/poem-2/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../tenant_probes/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../tenant_aggregation_profiles/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
