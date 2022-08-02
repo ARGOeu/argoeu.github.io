@@ -136,7 +136,9 @@
         
             <li><a class="toctree-l4" href="#put-manage-subscriptions-create-subscriptions">[PUT] Manage Subscriptions - Create subscriptions</a></li>
         
-            <li><a class="toctree-l4" href="#request-to-create-push-enabled-subscription">Request to create Push Enabled Subscription</a></li>
+            <li><a class="toctree-l4" href="#request-to-create-push-enabled-subscription-for-http_endpoint">Request to create Push Enabled Subscription for http_endpoint</a></li>
+        
+            <li><a class="toctree-l4" href="#request-to-create-push-enabled-subscription-for-mattermost">Request to create Push Enabled Subscription for mattermost</a></li>
         
             <li><a class="toctree-l4" href="#post-manage-subscriptions-verify-ownership-of-a-push-endpoint">[POST] Manage Subscriptions - Verify ownership of a push endpoint</a></li>
         
@@ -269,7 +271,7 @@
  &quot;name&quot;: &quot;projects/BRAND_NEW/subscriptions/alert_engine&quot;,
  &quot;topic&quot;: &quot;projects/BRAND_NEW/topics/monitoring&quot;,
  &quot;ackDeadlineSeconds&quot;: 10  ,
- &quot;created_on&quot;: &quot;2020-11-19T00:00:00Z&quot;
+ &quot;createdOn&quot;: &quot;2020-11-19T00:00:00Z&quot;
 }
 </code></pre>
 
@@ -277,9 +279,15 @@
 <p>Whenever a subscription is created with a valid push configuration, the service will also generate a unique hash that
 should be later used to validate the ownership of the registered push endpoint, and will mark the subscription as 
 unverified.</p>
-<p>The <code>maxMessages</code> field declares the number of messages that should be send per
+<p>The <code>type</code> field specifies what kind of push subscription the service will handle.
+The <code>http_endpoint</code> type is about subscriptions that will forward their messages
+to remote http endpoints. The <code>mattermost</code> type is about subscriptions that will
+forward their messages to mattermost channels through a mattermost webhook.</p>
+<p>The <code>maxMessages</code> field declares the number of messages that should be sent per
 push action. The default value is <code>1</code>. If <code>maxMessages</code> holds a value of <code>1</code> your
 push endpoint should expect a request body with the following schema:</p>
+<p>The <code>base64Decode</code> field indicates that the push mechanism should
+decode each message before sending it to the remote destination.</p>
 <pre><code class="json">{
      &quot;message&quot;: {
        &quot;attributes&quot;: {
@@ -320,11 +328,12 @@ should expect a request body with the following schema:</p>
 }
 </code></pre>
 
-<h2 id="request-to-create-push-enabled-subscription">Request to create Push Enabled Subscription</h2>
+<h2 id="request-to-create-push-enabled-subscription-for-http_endpoint">Request to create Push Enabled Subscription for http_endpoint</h2>
 <pre><code class="json">{
  &quot;topic&quot;: &quot;projects/BRAND_NEW/topics/monitoring&quot;,
  &quot;ackDeadlineSeconds&quot;:10,
   &quot;pushConfig&quot;: {
+    &quot;type&quot;: &quot;http_endpoint&quot;,
     &quot;pushEndpoint&quot;: &quot;https://127.0.0.1:5000/receive_here&quot;,
     &quot;maxMessages&quot;: 3,
     &quot;retryPolicy&quot;: {
@@ -343,7 +352,7 @@ should expect a request body with the following schema:</p>
   &quot;pushConfig&quot;: {
     &quot;pushEndpoint&quot;: &quot;https://127.0.0.1:5000/receive_here&quot;,
     &quot;maxMessages&quot;: 3,
-    &quot;authorization_header&quot;: {
+    &quot;authorizationHeader&quot;: {
       &quot;type&quot;: &quot;autogen&quot;,
       &quot;value&quot;: &quot;4551h9j7f7dde380a5f8bc4fdb4fe980c565b67b&quot;
     } ,
@@ -351,10 +360,52 @@ should expect a request body with the following schema:</p>
       &quot;type&quot;: &quot;linear&quot;, 
       &quot;period&quot;: 1000                
     },
-    &quot;verification_hash&quot;: &quot;9d5189f7f758e380a5f8bc4fdb4fe980c565b67b&quot;,
-    &quot;verified&quot;: false
+    &quot;verificationHash&quot;: &quot;9d5189f7f758e380a5f8bc4fdb4fe980c565b67b&quot;,
+    &quot;verified&quot;: false,
+    &quot;mattermostUrl&quot;: &quot;&quot;,
+    &quot;mattermostUsername&quot;: &quot;&quot;,
+    &quot;mattermostChannel&quot;: &quot;&quot;
     },
-  &quot;created_on&quot;: &quot;2020-11-19T00:00:00Z&quot;
+  &quot;createdOn&quot;: &quot;2020-11-19T00:00:00Z&quot;
+}
+</code></pre>
+
+<h2 id="request-to-create-push-enabled-subscription-for-mattermost">Request to create Push Enabled Subscription for mattermost</h2>
+<pre><code class="json">{
+ &quot;topic&quot;: &quot;projects/BRAND_NEW/topics/monitoring&quot;,
+ &quot;ackDeadlineSeconds&quot;:10,
+  &quot;pushConfig&quot;: {
+    &quot;type&quot;: &quot;mattermost&quot;,
+    &quot;mattermostUrl&quot;: &quot;webhook.com&quot;,
+    &quot;mattermostUsername&quot;: &quot;mattermost&quot;,
+    &quot;mattermostChannel&quot;: &quot;channel&quot;,
+    &quot;retryPolicy&quot;: {
+      &quot;type&quot;: &quot;linear&quot;, 
+      &quot;period&quot;: 1000                
+    }
+   }
+}
+</code></pre>
+
+<h3 id="response_1">Response</h3>
+<pre><code class="json">{
+ &quot;name&quot;: &quot;projects/BRAND_NEW/subscriptions/alert_engine&quot;,
+ &quot;topic&quot;: &quot;projects/BRAND_NEW/topics/monitoring&quot;,
+ &quot;ackDeadlineSeconds&quot;: 10,
+  &quot;pushConfig&quot;: {
+    &quot;pushEndpoint&quot;: &quot;&quot;,
+    &quot;maxMessages&quot;: 1,
+    &quot;retryPolicy&quot;: {
+      &quot;type&quot;: &quot;linear&quot;, 
+      &quot;period&quot;: 1000                
+    },
+    &quot;verificationHash&quot;: &quot;&quot;,
+    &quot;verified&quot;: true,
+    &quot;mattermostUrl&quot;: &quot;webhook.com&quot;,
+    &quot;mattermostUsername&quot;: &quot;mattermost&quot;,
+    &quot;mattermostChannel&quot;: &quot;channel&quot;
+    },
+  &quot;createdOn&quot;: &quot;2020-11-19T00:00:00Z&quot;
 }
 </code></pre>
 
@@ -405,16 +456,16 @@ unverified.</p>
 registered endpoint.</p>
 <ul>
 <li>
-<p>Open an api call with a path of <code>/ams_verification_hash</code>. The service will try to access this path using the <code>host:port</code>
+<p>Open an api call with a path of <code>/ams_verificationHash</code>. The service will try to access this path using the <code>host:port</code>
 of the push endpoint. For example, if the push endpoint is <code>https://example.com:8443/receive_here</code>, the  push endpoint should also
-support the api route of <code>https://example.com:8443/ams_verification_hash</code>.</p>
+support the api route of <code>https://example.com:8443/ams_verificationHash</code>.</p>
 </li>
 <li>
-<p>The api route of <code>https://example.com:8443/ams_verification_hash</code> should support the http <code>GET</code> method.</p>
+<p>The api route of <code>https://example.com:8443/ams_verificationHash</code> should support the http <code>GET</code> method.</p>
 </li>
 <li>
-<p>A <code>GET</code> request to <code>https://example.com:8443/ams_verification_hash</code> should return a response body 
-with only the <code>verification_hash</code>
+<p>A <code>GET</code> request to <code>https://example.com:8443/ams_verificationHash</code> should return a response body 
+with only the <code>verificationHash</code>
 that is found inside the subscriptions push configuration, 
 a <code>status code</code> of <code>200</code> and the header <code>Content-type: plain/text</code>.</p>
 </li>
@@ -486,14 +537,14 @@ only the subscriptions that he has access to(being present in a subscriptions's 
     &quot;topic&quot;: &quot;projects/BRAND_NEW/topics/monitoring&quot;,
     &quot;pushConfig&quot;: {},
     &quot;ackDeadlineSeconds&quot;: 10,
-    &quot;created_on&quot;: &quot;2020-11-19T00:00:00Z&quot;
+    &quot;createdOn&quot;: &quot;2020-11-19T00:00:00Z&quot;
   },
  {
    &quot;name&quot;: &quot;projects/BRAND_NEW/subscriptions/alert_engine2&quot;,
    &quot;topic&quot;: &quot;projects/BRAND_NEW/topics/monitoring&quot;,
    &quot;pushConfig&quot;: {},
    &quot;ackDeadlineSeconds&quot;: 10,
-   &quot;created_on&quot;: &quot;2020-11-19T00:00:00Z&quot;
+   &quot;createdOn&quot;: &quot;2020-11-19T00:00:00Z&quot;
  }],
  &quot;nextPageToken&quot;: &quot;&quot;,
  &quot;totalSize&quot;: 2
@@ -523,7 +574,7 @@ only the subscriptions that he has access to(being present in a subscriptions's 
     &quot;topic&quot;: &quot;projects/BRAND_NEW/topics/monitoring&quot;,
     &quot;pushConfig&quot;: {},
     &quot;ackDeadlineSeconds&quot;: 10,
-    &quot;created_on&quot;: &quot;2020-11-19T00:00:00Z&quot;
+    &quot;createdOn&quot;: &quot;2020-11-19T00:00:00Z&quot;
   }
  ],
  &quot;nextPageToken&quot;: &quot;&quot;,
@@ -554,7 +605,7 @@ only the subscriptions that he has access to(being present in a subscriptions's 
     &quot;topic&quot;: &quot;projects/BRAND_NEW/topics/monitoring&quot;,
     &quot;pushConfig&quot;: {},
     &quot;ackDeadlineSeconds&quot;: 10,
-    &quot;created_on&quot;: &quot;2020-11-19T00:00:00Z&quot;
+    &quot;createdOn&quot;: &quot;2020-11-19T00:00:00Z&quot;
   }
  ],
  &quot;nextPageToken&quot;: &quot;some_token&quot;,
@@ -685,18 +736,36 @@ Code: <code>200 OK</code>, Empty response if successful. The deadline will chang
 <p>This request modifies the push configuration of a subscription</p>
 <h3 id="request_10">Request</h3>
 <p><code>POST /v1/projects/{project_name}/subscriptions/{subscription_name}:modifyPushConfig</code></p>
-<h3 id="post-body_2">Post body:</h3>
-<pre><code>{  
+<h3 id="post-body-for-http_endpoint">Post body for http_endpoint</h3>
+<pre><code class="json">{  
    &quot;pushConfig&quot;:{  
-      &quot;pushEndpoint&quot;:&quot;&quot;,
+      &quot;type&quot;: &quot;http_endpoint&quot;,
+      &quot;pushEndpoint&quot;:&quot;example.com&quot;,
       &quot;maxMessages&quot;: 5,
-      &quot;authorization_header&quot;: {
+      &quot;authorizationHeader&quot;: {
          &quot;type&quot;: &quot;autogen&quot;
       },
       &quot;retryPolicy&quot;:{  
          &quot;type&quot;:&quot;linear&quot;,
          &quot;period&quot;:300
-      }
+      },
+      &quot;base64Decode&quot;: false
+   }
+}
+</code></pre>
+
+<h3 id="post-body-for-mattermost">Post body for mattermost</h3>
+<pre><code class="json">{  
+   &quot;pushConfig&quot;:{  
+      &quot;type&quot;: &quot;mattermost&quot;,
+      &quot;retryPolicy&quot;:{  
+         &quot;type&quot;:&quot;linear&quot;,
+         &quot;period&quot;:300
+      },
+      &quot;mattermostUrl&quot;: &quot;webhook.com&quot;,
+      &quot;mattermostUsername&quot;: &quot;willy&quot;,
+      &quot;mattermostChannel&quot;: &quot;ops&quot;,
+      &quot;base64Decode&quot;: true
    }
 }
 </code></pre>
@@ -724,9 +793,10 @@ you can use the update request with the <b>autogen</b> type.</p>
 -d POSTDATA http://{URL}/v1/projects/BRAND_NEW/subscriptions/alert_engine:modifyPushConfig?key=S3CR3T
 </code></pre>
 
-<h3 id="post-body_3">post body:</h3>
-<pre><code>{  
+<h3 id="post-body_2">post body:</h3>
+<pre><code class="json">{  
    &quot;pushConfig&quot;:{  
+      &quot;type&quot;: &quot;http_endpoint&quot;,
       &quot;pushEndpoint&quot;:&quot;host:example.com:8080/path/to/hook&quot;,
       &quot;maxMessages&quot;: 3,
       &quot;retryPolicy&quot;:{  
@@ -752,7 +822,7 @@ will mark the subscription as unverified and a new verification process should t
 <p>It's important to note that the subscription's topic must exist in order for the user to pull messages.</p>
 <h3 id="request_11">Request</h3>
 <p><code>POST /v1/projects/{project_name}/subscriptions/{subscription_name}:pull</code></p>
-<h3 id="post-body_4">Post body:</h3>
+<h3 id="post-body_3">Post body:</h3>
 <pre><code class="json">{
  &quot;maxMessages&quot;: &quot;1&quot;
 }
@@ -771,7 +841,7 @@ will mark the subscription as unverified and a new verification process should t
   -d POSTDATA https://{URL}/v1/projects/BRAND_NEW/subscriptions/alert_engine:pull?key=S3CR3T&quot;
 </code></pre>
 
-<h3 id="post-body_5">post body:</h3>
+<h3 id="post-body_4">post body:</h3>
 <p>{
  "maxMessages": "1"
 }</p>
@@ -802,7 +872,7 @@ will mark the subscription as unverified and a new verification process should t
 <p>Messages retrieved from a pull subscription can be acknowledged by sending message with an array of ackIDs.</p>
 <h3 id="request_12">Request</h3>
 <p><code>POST /v1/projects/{project_name}/subscriptions/{subscription_name}:acknowledge</code></p>
-<h3 id="post-body_6">Post body:</h3>
+<h3 id="post-body_5">Post body:</h3>
 <pre><code class="json">{
   &quot;ackIds&quot;: [
   &quot;dQNNHlAbEGEIBE...&quot;
@@ -822,7 +892,7 @@ will mark the subscription as unverified and a new verification process should t
 -d POSTDATA http://{URL}/v1/projects/BRAND_NEW/subscriptions/alert_engine:acknowledge?key=S3CR3T&quot;
 </code></pre>
 
-<h3 id="post-body_7">post body:</h3>
+<h3 id="post-body_6">post body:</h3>
 <pre><code class="json">{
  &quot;ackIds&quot;: [
   &quot;dQNNHlAbEGEIBE...&quot;
@@ -839,7 +909,7 @@ will mark the subscription as unverified and a new verification process should t
 <p>This request returns the min, max and current offset of a subscription</p>
 <h3 id="request_13">Request</h3>
 <p><code>GET /v1/projects/{project_name}/subscriptions/{subscription_name}:offsets</code></p>
-<h3 id="post-body_8">Post body:</h3>
+<h3 id="post-body_7">Post body:</h3>
 <pre><code>{
   &quot;max&quot;: 14,
   &quot;min&quot;: 0,
@@ -857,7 +927,7 @@ will mark the subscription as unverified and a new verification process should t
 -d POSTDATA http://{URL}/v1/projects/BRAND_NEW/subscriptions/alert_engine:offsets?key=S3CR3T&quot;
 </code></pre>
 
-<h3 id="post-body_9">post body:</h3>
+<h3 id="post-body_8">post body:</h3>
 <pre><code>{
   &quot;max&quot;: 14,
   &quot;min&quot;: 0,
@@ -900,7 +970,7 @@ Code: <code>200 OK</code></p>
 <p>This request modifies the current offset of a subscription</p>
 <h3 id="request_15">Request</h3>
 <p><code>POST /v1/projects/{project_name}/subscriptions/{subscription_name}:modifyOFfset</code></p>
-<h3 id="post-body_10">Post body:</h3>
+<h3 id="post-body_9">Post body:</h3>
 <pre><code>{
  &quot;offset&quot;:3
 }
@@ -917,7 +987,7 @@ Code: <code>200 OK</code></p>
 -d POSTDATA http://{URL}/v1/projects/BRAND_NEW/subscriptions/alert_engine:modifyOffset?key=S3CR3T&quot;
 </code></pre>
 
-<h3 id="post-body_11">post body:</h3>
+<h3 id="post-body_10">post body:</h3>
 <pre><code>{
   &quot;offset&quot;:14
 }
