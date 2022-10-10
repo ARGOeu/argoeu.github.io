@@ -199,7 +199,10 @@ Of course you can always override the default's if you like.</p>
 <p>Success Response</p>
 <p><code>201 CREATED</code></p>
 <pre><code>        {
-            &quot;access_key&quot;: &quot;key1&quot;,
+            &quot;headers&quot;: {
+                &quot;header-1&quot;: &quot;value-1&quot;,
+                &quot;header-2&quot;: &quot;value-2&quot;
+            },
             &quot;host&quot;: &quot;127.0.0.1&quot;,
             &quot;service_uuid&quot;: &quot;da22b2d4-ba6c-43ca-b28d-400sd0a5d83e&quot;,
             &quot;port&quot;: 9000,
@@ -230,7 +233,8 @@ Of course you can always override the default's if you like.</p>
             &quot;port&quot;: 9000,
             &quot;type&quot;: &quot;api-key&quot;,
             &quot;uuid&quot;: &quot;da22b2d4-8ip0-43ca-b28d-500sd0a5d876e&quot;,
-            &quot;created_on&quot;: &quot;2018-05-05T18:04:05Z&quot;
+            &quot;created_on&quot;: &quot;2018-05-05T18:04:05Z&quot;,
+            &quot;updated_on&quot;: &quot;2021-05-05T18:04:05Z&quot;
         }
 </code></pre>
 
@@ -257,7 +261,8 @@ Of course you can always override the default's if you like.</p>
             &quot;port&quot;: 9000,
             &quot;type&quot;: &quot;api-key&quot;,
             &quot;uuid&quot;: &quot;da22b2d4-8ip0-43ca-b28d-500sd0a5d876e&quot;,
-            &quot;created_on&quot;: &quot;2018-05-05T18:04:05Z&quot;
+            &quot;created_on&quot;: &quot;2018-05-05T18:04:05Z&quot;,
+            &quot;updated_on&quot;: &quot;2021-05-05T18:04:05Z&quot;
         },
         {
             &quot;access_key&quot;: &quot;key1&quot;,
@@ -266,7 +271,8 @@ Of course you can always override the default's if you like.</p>
             &quot;port&quot;: 9000,
             &quot;type&quot;: &quot;api-key&quot;,
             &quot;uuid&quot;: &quot;da22b2d4-9kl2-43ca-b28d-500sd0a5d876e&quot;,
-            &quot;created_on&quot;: &quot;2018-05-05T18:04:05Z&quot;
+            &quot;created_on&quot;: &quot;2018-05-05T18:04:05Z&quot;,
+            &quot;updated_on&quot;: &quot;2021-05-05T18:04:05Z&quot;
         }
   ]
 }
@@ -302,7 +308,8 @@ This request can update one or more fields with one call.</p>
             &quot;port&quot;: 8080,
             &quot;type&quot;: &quot;api-key&quot;,
             &quot;uuid&quot;: &quot;da22b2d4-8ip0-43ca-b28d-500sd0a5d876e&quot;,
-            &quot;created_on&quot;: &quot;2018-05-05T18:04:05Z&quot;
+            &quot;created_on&quot;: &quot;2018-05-05T18:04:05Z&quot;,
+            &quot;updated_on&quot;: &quot;2021-05-05T18:04:05Z&quot;
         }
 </code></pre>
 
