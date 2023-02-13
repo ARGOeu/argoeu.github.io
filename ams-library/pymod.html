@@ -364,6 +364,32 @@ python-requests library call.</li>
 </dd></dl>
 
 <dl class="method">
+<dt id="pymod.ams.ArgoMessagingService.create_project_member">
+<code class="descname">create_project_member</code><span class="sig-paren">(</span><em>username</em>, <em>project=None</em>, <em>roles=None</em>, <em>email=None</em>, <em>**reqkwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pymod/ams.html#ArgoMessagingService.create_project_member"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pymod.ams.ArgoMessagingService.create_project_member" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function creates a new user with a POST request under the given project</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>project</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>)</em>) – the name of the project.If no</td>
+</tr>
+</tbody>
+</table>
+<p>project is supplied, the declared global project will be used instead
+:param (str) username: the name of the user
+:param (str) email: the email of the user
+:param (str[]) roles: project roles for the user</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(AmsUser) the assigned user object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="pymod.ams.ArgoMessagingService.create_sub">
 <code class="descname">create_sub</code><span class="sig-paren">(</span><em>sub</em>, <em>topic</em>, <em>ackdeadline=10</em>, <em>push_endpoint=None</em>, <em>retry_policy_type='linear'</em>, <em>retry_policy_period=300</em>, <em>retobj=False</em>, <em>**reqkwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pymod/ams.html#ArgoMessagingService.create_sub"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pymod.ams.ArgoMessagingService.create_sub" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function creates a new subscription in a project with a PUT request</p>

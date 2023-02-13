@@ -160,7 +160,7 @@
 <span class="kn">from</span> <span class="nn">.amsmsg</span> <span class="kn">import</span> <span class="n">AmsMessage</span>
 <span class="kn">from</span> <span class="nn">.amstopic</span> <span class="kn">import</span> <span class="n">AmsTopic</span>
 <span class="kn">from</span> <span class="nn">.amssubscription</span> <span class="kn">import</span> <span class="n">AmsSubscription</span>
-<span class="kn">from</span> <span class="nn">.amsuser</span> <span class="kn">import</span> <span class="n">AmsUser</span><span class="p">,</span> <span class="n">AmsUserPage</span>
+<span class="kn">from</span> <span class="nn">.amsuser</span> <span class="kn">import</span> <span class="n">AmsUser</span><span class="p">,</span> <span class="n">AmsUserPage</span><span class="p">,</span> <span class="n">AmsUserProject</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
@@ -229,6 +229,7 @@
             <span class="c1"># project api calls</span>
             <span class="s2">&quot;project_add_member&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;post&quot;</span><span class="p">,</span> <span class="s2">&quot;https://</span><span class="si">{0}</span><span class="s2">/v1/projects/</span><span class="si">{1}</span><span class="s2">/members/</span><span class="si">{2}</span><span class="s2">:add&quot;</span><span class="p">],</span>
             <span class="s2">&quot;project_get_member&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;get&quot;</span><span class="p">,</span> <span class="s2">&quot;https://</span><span class="si">{0}</span><span class="s2">/v1/projects/</span><span class="si">{1}</span><span class="s2">/members/</span><span class="si">{2}</span><span class="s2">&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;project_create_member&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;post&quot;</span><span class="p">,</span> <span class="s2">&quot;https://</span><span class="si">{0}</span><span class="s2">/v1/projects/</span><span class="si">{1}</span><span class="s2">/members/</span><span class="si">{2}</span><span class="s2">&quot;</span><span class="p">],</span>
             <span class="s2">&quot;project_remove_member&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;post&quot;</span><span class="p">,</span> <span class="s2">&quot;https://</span><span class="si">{0}</span><span class="s2">/v1/projects/</span><span class="si">{1}</span><span class="s2">/members/</span><span class="si">{2}</span><span class="s2">:remove&quot;</span><span class="p">],</span>
             <span class="s2">&quot;project_create&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;post&quot;</span><span class="p">,</span> <span class="s2">&quot;https://</span><span class="si">{0}</span><span class="s2">/v1/projects/</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="p">],</span>
             <span class="s2">&quot;project_update&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;put&quot;</span><span class="p">,</span> <span class="s2">&quot;https://</span><span class="si">{0}</span><span class="s2">/v1/projects/</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="p">],</span>
@@ -274,6 +275,7 @@
 
             <span class="s2">&quot;project_add_member&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;post&quot;</span><span class="p">,</span> <span class="nb">set</span><span class="p">([</span><span class="mi">400</span><span class="p">,</span> <span class="mi">401</span><span class="p">,</span> <span class="mi">403</span><span class="p">,</span> <span class="mi">404</span><span class="p">,</span> <span class="mi">409</span><span class="p">])],</span>
             <span class="s2">&quot;project_get_member&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;get&quot;</span><span class="p">,</span> <span class="nb">set</span><span class="p">([</span><span class="mi">400</span><span class="p">,</span> <span class="mi">401</span><span class="p">,</span> <span class="mi">403</span><span class="p">,</span> <span class="mi">404</span><span class="p">])],</span>
+            <span class="s2">&quot;project_create_member&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;post&quot;</span><span class="p">,</span> <span class="nb">set</span><span class="p">([</span><span class="mi">400</span><span class="p">,</span> <span class="mi">401</span><span class="p">,</span> <span class="mi">403</span><span class="p">,</span> <span class="mi">404</span><span class="p">,</span> <span class="mi">409</span><span class="p">])],</span>
             <span class="s2">&quot;project_remove_member&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;get&quot;</span><span class="p">,</span> <span class="nb">set</span><span class="p">([</span><span class="mi">401</span><span class="p">,</span> <span class="mi">403</span><span class="p">,</span> <span class="mi">404</span><span class="p">])],</span>
             <span class="s2">&quot;project_create&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;post&quot;</span><span class="p">,</span> <span class="nb">set</span><span class="p">([</span><span class="mi">400</span><span class="p">,</span> <span class="mi">401</span><span class="p">,</span> <span class="mi">403</span><span class="p">,</span> <span class="mi">409</span><span class="p">])],</span>
             <span class="s2">&quot;project_update&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;put&quot;</span><span class="p">,</span> <span class="nb">set</span><span class="p">([</span><span class="mi">400</span><span class="p">,</span> <span class="mi">401</span><span class="p">,</span> <span class="mi">403</span><span class="p">,</span> <span class="mi">404</span><span class="p">,</span> <span class="mi">409</span><span class="p">])],</span>
@@ -1484,6 +1486,42 @@
             <span class="n">url</span> <span class="o">=</span> <span class="n">route</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">username</span><span class="p">)</span>
             <span class="n">method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;do_</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">route</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
             <span class="n">r</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">body</span><span class="p">),</span> <span class="s2">&quot;project_add_member&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">reqkwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">AmsUser</span><span class="p">()</span><span class="o">.</span><span class="n">load_from_dict</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">AmsException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">e</span></div>
+
+<div class="viewcode-block" id="ArgoMessagingService.create_project_member"><a class="viewcode-back" href="../../pymod.html#pymod.ams.ArgoMessagingService.create_project_member">[docs]</a>    <span class="k">def</span> <span class="nf">create_project_member</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">roles</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">reqkwargs</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This function creates a new user with a POST request under the given project</span>
+
+<span class="sd">        :param (str) project: the name of the project.If no</span>
+<span class="sd">        project is supplied, the declared global project will be used instead</span>
+<span class="sd">        :param (str) username: the name of the user</span>
+<span class="sd">        :param (str) email: the email of the user</span>
+<span class="sd">        :param (str[]) roles: project roles for the user</span>
+
+<span class="sd">        :return: (AmsUser) the assigned user object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">roles</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">roles</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">roles</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="n">project</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">project</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">project</span>
+
+        <span class="n">user</span> <span class="o">=</span> <span class="n">AmsUser</span><span class="p">(</span>
+            <span class="n">projects</span><span class="o">=</span><span class="p">[</span><span class="n">AmsUserProject</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="n">project</span><span class="p">,</span> <span class="n">roles</span><span class="o">=</span><span class="n">roles</span><span class="p">)]</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">email</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">route</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">routes</span><span class="p">[</span><span class="s2">&quot;project_create_member&quot;</span><span class="p">]</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">route</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">username</span><span class="p">)</span>
+            <span class="n">method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;do_</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">route</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">user</span><span class="o">.</span><span class="n">to_json</span><span class="p">(),</span> <span class="s2">&quot;project_create_member&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">reqkwargs</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">AmsUser</span><span class="p">()</span><span class="o">.</span><span class="n">load_from_dict</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">AmsException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">e</span></div>
